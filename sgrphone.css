@@ -106,12 +106,10 @@ div.links1 a {
 
 
 div.frame1 {
-	width: 120vw;
-	height: 60vw;
+	width: 100vw;
+	height: 50vw;
 	margin: auto;
 	margin: 0 0 1vw 0;
-	position: relative;
-	right: 10vw;
 }
 .window a {
 	text-decoration: none;
