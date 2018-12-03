@@ -55,17 +55,13 @@ div.dropc a {
 	text-align: left;
 }
 
-div.dropc a:hover {
-	background-color: lightgrey;
-	width: 46vw;
-	padding:1vw 2vw;
-	margin: 0;
-}
 
-.drop:hover .dropc {
+li.drop:hover .dropc {
 	display: block;
 
 }
+
+
 
 .header {
 	text-align: center;
