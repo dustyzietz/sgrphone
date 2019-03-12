@@ -3,16 +3,22 @@
 <html>
 <head>
 	<style>
-	h1 {
-		font-size: 4vw;
+	* {
+		font-size: 3vw;
+	}
+	#div1 {
+		width: 100%;
+		height: 75%;
+		overflow: auto;
 	}
 </style>
 </head>
 <body>
-	<h1>Find your perfect board</h1>
+	<h1 style="text-align:center">Find your perfect board</h1>
+	Your Volume:
 	<input type="number" id="vol" step=".1" value="24">
-	<div style="border: 1px solid black;" onclick="findBoard()">
-	FIND BOARD</div>
+	<div style="border: 1px solid black;width:40%;float:right;text-align:center" onclick="findBoard()">
+	FIND BOARDS</div>
 	<div id="div1"></div>
 
 	<script>
@@ -125,12 +131,15 @@
 			let myBoards =[];
 			let myVolume = Number(document.getElementById('vol').value);
 			for(let i = 0; i < c.length; i++){
-				if(c[i].volume + 1 >= myVolume && c[i].volume -1  <= myVolume){
+				if(c[i].volume + .6 >= myVolume && c[i].volume - .6  <= myVolume){
+				myBoards.push('volume');	
+               myBoards.push(c[i].volume);
                myBoards.push(c[i].text);
+               myBoards.push('<br>');
                
 				}
 			}
-			document.getElementById('div1').innerHTML = myBoards.join('<br>');
+			document.getElementById('div1').innerHTML = myBoards.join(' ');
 		}
 		
 	</script>
