@@ -1,0 +1,133 @@
+
+<DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Find your perfect board</h1>
+	<input type="number" id="vol" step=".1" value="24">
+	<div style="border: 1px solid black;" onclick="findBoard()">
+	FIND BOARD</div>
+	<div id="div1"></div>
+
+	<script>
+		class Surfboards{
+			constructor(volume, text) {
+				this._volume = volume;
+				this._text = text;
+			}
+			get volume() {
+				return this._volume;
+			}
+			get text() {
+				return this._text;
+			}
+		}
+        let c =[];
+		c.push( new Surfboards(22.4, "Oh one 5'6 18-1/2 2-1/8 round tail"));
+	  c.push( new Surfboards(23.5, "Oh one 5'7 18-5/8 2-3/16 round tail"));
+		
+	   c.push( new Surfboards(24.00, "Oh one 5'8   18-3/4  2 3/16 round tail"));
+		
+	   c.push( new Surfboards(25.20, "Oh one 5'9   18-7/8  2-1/4 round tail"));
+		
+	   c.push( new Surfboards(26.40, "Oh one 5'10   19  2-5/16 round tail"));
+		
+	   c.push( new Surfboards(27.60, "Oh one 5'11   19-1/8  2-3/8 round tail"));
+		
+	   c.push( new Surfboards(28.80, "Oh one 6'0   19-1/4  2-7/16 round tail"));
+		
+	   c.push( new Surfboards(30.00, "Oh one 6'1	19-3/8  2-1/2 round tail"));
+		
+	   c.push(new Surfboards(31.50, "Oh one 6'2	  19-5/8  2-9/16 round tail"));
+		
+	   c.push(new Surfboards(32.70, "Oh one 6'3	  19-3/4  2-5/8 round tail"));
+		
+	   c.push(new Surfboards(33.50, "Oh one 6'4	  19-7/8  2-5/8 round tail"));   
+		
+	    c.push(new Surfboards(35.40, "Oh one 6'5   20  2-3/4  round tail"));
+		
+	    c.push(new Surfboards(37.70, "Oh one 6'6   20-1/8  2-7/8 round tail"));
+
+	    c.push(new Surfboards(23.90, "Nevada 5'8   18-1/2  2-3/16 round square tail"));
+
+	    c.push(new Surfboards(25.30, "Nevada 5'9	18-3/4  2-1/4 round square tail"));
+
+	    c.push(new Surfboards(26.50, "Nevada 5'10	18-7/8	2-5/16 round square tail"));
+
+	    c.push(new Surfboards(27.70, "Nevada 5'11	19	2-3/8 round square tail"));
+
+	    c.push(new Surfboards(29.10, "Nevada 6'0	19-1/8	2-7/16 round square tail"));
+
+	    c.push(new Surfboards(30.30, "Nevada 6'1	19-1/4	2-1/2 round square tail"));
+
+	    c.push(new Surfboards(31.70, "Nevada 6'2	19-1/2	2-9/16 round square tail"));
+
+	    c.push(new Surfboards(33.30, "Nevada 6'3	19-3/4	2-5/8 round square tail"));
+
+	    c.push(new Surfboards(34.00, "Nevada 6'4	19-7/8	2-5/8 round square tail"));
+
+	    c.push(new Surfboards(36.00	, "Nevada 6'6	20-1/4	2-3/4 round square tail"));
+
+	    c.push(new Surfboards(38.00	, "Nevada 6'8	20-1/2	2-3/4 round square tail"));
+
+	    c.push(new Surfboards(41.10, "Nevada 6'10	21 2-7/8 round square tail"));
+
+	    c.push(new Surfboards(22.50, "Fader 5'8   18-3/8	2-1/8 thumb tail"));
+
+	    c.push(new Surfboards(23.10, "Fader 5'9	  18-1/2	2-1/8 thumb tail"));
+
+	    c.push(new Surfboards(24.50, "Fader 5'10	18-5/8	2-3/16 thumb tail"));
+
+	    c.push(new Surfboards(25.80, "Fader 5'11	18-3/4	2-1/4 thumb tail"));
+
+	    c.push(new Surfboards(27.00, "Fader 6'0    18-7/8	2-3/8 thumb tail"));
+
+	    c.push(new Surfboards(28.30, "Fader 6'1	   19	2-7/16 thumb tail"));
+
+	    c.push(new Surfboards(29.40, "Fader 6'2   19-1/8	2-1/2 thumb tail"));
+
+	    c.push(new Surfboards(30.60, "Fader 6'3	   19-1/4	 2-9/16 thumb tail"));
+
+	    c.push(new Surfboards(31.90, "Fader 6'4	  19-3/8	2-5/8 thumb tail"));
+
+	    c.push(new Surfboards(32.30, "Fader 6'5   19-3/8	2-3/8 thumb tail"));
+
+	    c.push(new Surfboards(33.00, "Fader 6'6	  19-1/2	2-5/8 thumb tail"));
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		function findBoard() {
+			let myBoards =[];
+			let myVolume = Number(document.getElementById('vol').value);
+			for(let i = 0; i < c.length; i++){
+				if(c[i].volume + 1 >= myVolume && c[i].volume -1  <= myVolume){
+               myBoards.push(c[i].text);
+               
+				}
+			}
+			document.getElementById('div1').innerHTML = myBoards.join('<br>');
+		}
+		
+	</script>
+</body>
+</html>
