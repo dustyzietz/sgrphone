@@ -4,20 +4,30 @@
 <head>
 	<style>
 	* {
-		font-size: 3vw;
+		font-size: 4vw;
 	}
 	#div1 {
 		width: 100%;
 		height: 75%;
 		overflow: auto;
 	}
+	#but1 {
+		border: 1px solid black;
+		width:35%;
+		float:right;
+		text-align:center;
+		padding: .6%;
+		border-radius: 5vw;
+		color: white;
+		background-color: black;
+	}
 </style>
 </head>
 <body>
 	<h1 style="text-align:center">Find your perfect board</h1>
 	Your Volume:
-	<input type="number" id="vol" step=".1" value="24">
-	<div style="border: 1px solid black;width:40%;float:right;text-align:center" onclick="findBoard()">
+	<input type="text" id="vol" step=".1" size="2" value="24">
+	<div id="but1" onclick="findBoard()">
 	FIND BOARDS</div>
 	<div id="div1"></div>
 
@@ -105,6 +115,40 @@
 	    c.push(new Surfboards(32.30, "Fader 6'5   19-3/8	2-3/8 thumb tail"));
 
 	    c.push(new Surfboards(33.00, "Fader 6'6	  19-1/2	2-5/8 thumb tail"));
+
+	    c.push(new Surfboards(23.70, "Rare Bird 5'4	19	2 3/16 thumb tail"));
+
+	    c.push(new Surfboards(24.80, "Rare Bird 5'5	19-1/8	2-1/4 thumb tail"));
+
+	    c.push(new Surfboards(25.30, "Rare Bird 5'6	19-1/4 2-1/4 thumb tail"));
+
+        c.push(new Surfboards(26.50, "Rare Bird 5'7	19-3/8	2-5/16 thumb tail"));
+
+        c.push(new Surfboards(27.70, "Rare Bird 5'8	19-1/2	2-3/8 thumb tail"));
+
+        c.push(new Surfboards(28.30, "Rare Bird 5'9	19-5/8	2-7/16 thumb tail"));
+
+        c.push(new Surfboards(30.30, "Rare Bird 5'10	19-3/4	2-1/2 thumb tail"));
+
+	    c.push(new Surfboards(31.00, "Rare Bird 5'11	19-7/8	2-1/2 thumb tail"));
+
+	    c.push(new Surfboards(33.00, "Rare Bird 6'0	20	2-5/8 thumb tail"));
+
+	    c.push(new Surfboards(33.70, "Rare Bird 6'1	20-1/8	2-5/8 thumb tail"));
+
+	    c.push(new Surfboards(35.70, "Rare Bird 6'2	20-1/4	2-3/4 thumb tail"));
+
+	    c.push(new Surfboards(36.30, "Rare Bird 6'3	20-3/8	2-3/4 thumb tail"));
+
+	    c.push(new Surfboards(37.00, "Rare Bird 6'4	20-1/2	2-3/4 thumb tail"));
+
+        c.push(new Surfboards(37.50, "Rare Bird 6'5	20-1/2	2-3/4 thumb tail"));
+
+	    c.push(new Surfboards(38.60, "Rare Bird 6'6	20-1/2	2-7/8 thumb tail"));
+
+
+	     
+
 
 	 
 

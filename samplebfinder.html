@@ -1,0 +1,24 @@
+
+let boardlist = [
+   { 
+    volume :[1, 2, 3, 4], 
+    btext  :['board 1', 'board 2', 'board 3', 'board 4'], 
+    model  : 'Oh One', 
+    tail   : 'Thumb tail'}, 
+  { 
+    volume :[1, 2, 3, 4], 
+    btext  :['board 1', 'board 2', 'board 3', 'board 4'], 
+    model  : 'Fader', 
+    tail   : 'Round tail'}
+  ]
+let maxvol = 3;
+let minvol = 2;
+
+for(let i = 0;i < boardlist.length; i++) {
+for(let j = 0;j < boardlist[i].volume.length; j++) {
+  if (boardlist[i].volume[j] <= maxvol && boardlist[i].volume[j] <= minvol) {
+ console.log(`Volume: ${boardlist[i].volume[j]} ${boardlist[i].btext[j]} ${boardlist[i].model} ${boardlist[i].tail}`); }
+}
+}
+    
+    

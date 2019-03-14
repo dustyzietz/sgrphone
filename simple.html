@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+	<p>Enter volume :</p>
+	<input id="vol1" type="number" value="3"><br>
+	<button onclick="bsearch()">filter boards</button>
+	<p id="dis1"></p>
+	<script>
+		function bsearch()  {
+		var bds = [{x:1, y:"as"}, {x:2, y:"sd"}, {x:3, y:"df"}];
+		var minvol = (vol1.value - 1);
+        var minbds = bds.filter(mingone);
+        function mingone(value) {
+        	return value.x > minvol;
+        }
+
+
+		document.getElementById("dis1").innerHTML = minbds[0].x ;
+		
+			}
+	</script>
+</body>
+</html>
+minbds[2].x + " " + minbds[2].y + "<br>" + 
+			minbds[1].x + " " + minbds[1].y + "<br>" + 
+				minbds[0].x + " " + minbds[0].y;

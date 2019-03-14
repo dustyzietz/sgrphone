@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	* {
+		font-size: 3vw;
+	}
+	#leftside {
+		width: 49%;
+		height: 100%;
+		float: left;
+	}
+	#rightside {
+		width: 49%;
+		height: 100%;
+		float: right;
+	}
+	h1 {
+		margin: 0;
+		text-align: center;
+		font-size: 4vw;
+	}
+	h2 {
+		margin: 0;
+		text-align: center;
+		font-size: 4vw;
+	}
+	h3 {
+		margin: 0;
+		text-align: center;
+		font-size: 4vw;
+	}
+	div#cVolumeButton {
+		width: 50%;
+		background-color: black;
+		height: 10%;
+		clear: both;
+		margin: auto;
+		text-align: center;
+		margin-top: 5% ;
+		padding: 2%;
+		border-radius: 5vw;
+		color: white;
+
+	}
+	#clear {
+		clear: both;
+	}
+	input {
+		font-size: 4vw;
+	}
+	#cVolumeDisplay {
+		
+		font-size: 5vw;
+	}
+
+</style>
+
+
+</head>
+<body>
+	<h1>Find Custom Board Volume</h1>
+<div id="leftside">
+<h2>Stock Dimensions</h2>
+<h3>Length</h3>
+ <input type="text" size="1" maxlength="1" id="sLength1">feet<input type="text" size="1" maxlength="2" id="sLength2">inches<br>
+<h3>Width</h3>
+ <input type="text" size="1" maxlength="2" id="sWidth1">and<input type="text" size="1" maxlength="2" id="sWidth2">/
+ <input type="text" size="1" maxlength="2" value="1" id="sWidth3">inches
+ <br>
+<h3>Thickness</h3>
+ <input type="text" size="1" maxlength="1" id="sThick1">and<input type="text" size="1" maxlength="2" id="sThick2">/
+ <input type="text" size="1" maxlength="2" value="1" id="sThick3">inches
+ <br><br>
+<h3>Volume:<input type="text" size="1" maxlength="4" id="sVolume"></h3>
+
+</div>
+
+
+<div id="rightside">
+<h2>Custom Dimensions</h2>
+<h3>Length</h3>
+ <input type="text" size="1" maxlength="1" id="cLength1">feet<input type="text" size="1" maxlength="2" id="cLength2">inches<br>
+<h3>Width</h3>
+ <input type="text" size="1" maxlength="2" id="cWidth1">and<input type="text" size="1" maxlength="2" id="cWidth2">/
+ <input type="text" size="1" value="1" maxlength="2" id="cWidth3">inches
+ <br>
+<h3>Thickness</h3>
+ <input type="text" size="1" maxlength="1" id="cThick1">and<input type="text" size="1" maxlength="2" id="cThick2">/
+ <input type="text" size="1" maxlength="2" value="1" id="cThick3">inches
+ <br><br>
+<h3 >Custom Volume:<div  id="cVolumeDisplay"></div></h3>
+
+
+</div>
+<div id="clear"></div>
+<div id="cVolumeButton" onclick="findCustomVolume()">Find Custom Volume</div>
+
+</body>
+<script>
+
+
+
+	let findCustomVolume = function () {
+let stockLength = (sLength1.value * 12) + Number(sLength2.value);
+let stockVolume = sVolume.value;
+let stockWidth = Number(sWidth1.value) + sWidth2.value / sWidth3.value;
+let stockThick = Number(sThick1.value) + sThick2.value / sThick3.value;
+let customLength = (cLength1.value * 12) + Number(cLength2.value);
+let customWidth = Number(cWidth1.value) + cWidth2.value / cWidth3.value;
+let customThick = Number(cThick1.value) + cThick2.value / cThick3.value;
+let customVolume = (customLength / stockLength) * (customWidth / stockWidth) * (customThick / stockThick) * stockVolume;
+document.getElementById('cVolumeDisplay').innerHTML = customVolume ;
+
+}
+
+	</script>
+</html>
