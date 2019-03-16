@@ -25,6 +25,7 @@
 	<div class="reviewdrop drop4" onclick="dropmenu4()">
 		<img src="lostlogo.jpg" width="75%" height="75%" alt=" ">
 	</div>
+	<div id="streamer">SURFBOARD REVIEWS</div>
 	<div class="droplist" id="dlist1">
 		<div class="dropitem">ROOK 14</div>
 		<div class="dropitem">Item</div>
@@ -34,12 +35,12 @@
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
-		<div class="closebutton">
+		<div class="closebutton" onclick="closebutton()">
 			<img src="close.png" alt=" " width="25%" height="auto">
 			</div> 
 </div>
 <div class="droplist" id="dlist2">
-		<div class="dropitem">MONSTA 6</div>
+		<div class="dropitem" onclick="playmovie1()">MONSTA 6</div>
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
@@ -47,6 +48,9 @@
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
+		<div class="closebutton" onclick="closebutton()">
+			<img src="close.png" alt=" " width="25%" height="auto">
+			</div> 
 </div>
 <div class="droplist" id="dlist3">
 		<div class="dropitem">A2</div>
@@ -57,6 +61,9 @@
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
+		<div class="closebutton" onclick="closebutton()">
+			<img src="close.png" alt=" " width="25%" height="auto">
+			</div> 
 </div>
 <div class="droplist" id="dlist4">
 		<div class="dropitem">SUB DRIVER</div>
@@ -67,7 +74,30 @@
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
+		<div class="closebutton" onclick="closebutton()">
+			<img src="close.png" alt=" " width="25%" height="auto">
+			</div> 
 </div>
+</div>
+<div id="frame1">
+	<iframe id="if1" src="https://www.youtube.com/embed/zonYOhlSePk?autoplay=1" name="if1" width="100%" height="100%"  allow="autoplay" >
+	</iframe>
+</div>
+<div id="boardtext"></div>
+<div class="window">
+ <div class="innerwindow" onclick="">
+ 	Surfboard <br>Volume<br>calculator
+ </div>
+</div>
+
+<div class="window" >
+	<div class="innerwindow" onclick="">
+		find<br>your<br>Board</div>
+</div>
+
+<div class="window" >
+	<div class="innerwindow" onclick="">
+		Custom<br>Board<br>Volume</div>
 </div>
 <script>
 	function dropmenu1() {
@@ -109,6 +139,24 @@
 		document.getElementById('dlist3').style.opacity = "0";
 		document.getElementById('dlist1').style.visibility = "hidden";
 		document.getElementById('dlist1').style.opacity = "0";
+	}
+	function closebutton(){
+		document.getElementById('dlist4').style.visibility = "hidden";
+		document.getElementById('dlist4').style.opacity = "0";
+		document.getElementById('dlist2').style.visibility = "hidden";
+		document.getElementById('dlist2').style.opacity = "0";
+		document.getElementById('dlist3').style.visibility = "hidden";
+		document.getElementById('dlist3').style.opacity = "0";
+		document.getElementById('dlist1').style.visibility = "hidden";
+		document.getElementById('dlist1').style.opacity = "0";
+	}
+	function playmovie1() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "https://www.youtube.com/embed/5TUj202lA_o";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "THE BEST ALWAYS FINDS A WAY TO GET BETTER <br>This is our best high performance all-rounder yet, improved and fine-tuned by the entire Traktor Team. 8 years after the original Monsta built its reputation as a go-to for surfers around the world, from WSL podiums to everyday sessions and annual Indo trips, the Monsta 8 is the result of nearly a decade’s worth of R&D. <br>With so many epic but contrasting styles throughout the Traktor Team, JS spent months gathering input from absolutely everyone. It had to cater for some of the best pure rail games in the world in Parko and Ace, the aerial freak shows of Mikey, Ryan & Dusty, and the crazy versatility of Julian and Owen. There’s a little bit of everyone in the Monsta 8, with it becoming the new gold standard under the entire team’s feet. From Owen starting his comeback at Snapper on one of our key M8 prototypes, to JS and Joel constantly testing & improving on the latest changes together, we couldn’t be happier with the results.<br>First, the rocker has been tweaked to have slightly more curve in both the nose and tail. The last two inches of nose rocker have been lifted to prevent catching in quality waves, while the adjustments to the tail curve provide extra release. Concaves have been deepened through the fins creating more speed and removing drag, while maintaining maximum control. The outline also has a more pronounced hip, allowing for quicker, more responsive direction changes. The Monsta 8 prompts intuitive, fast and flowing surfing, and has an outline to match.<br>We’ve refined the Monsta 8 to the point where everyone from longtime weekend warriors to world champs are calling it their favourite performance driven all-rounder ever. And now, it’s ready for everyone else to ride and enjoy in a huge range of waves around the globe. The best always find a way to get better."
+
+;
 	}
 	</script>
 </body>

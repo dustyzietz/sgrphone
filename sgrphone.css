@@ -30,6 +30,7 @@ body{ margin:0;
 div.droplist {
 	position: absolute;
     opacity: 0;
+    -webkit-transition:1s;
 	transition : 1s;
 	visibility: hidden;
 	background-color: #333;
@@ -55,4 +56,33 @@ div.closebutton {
 div.closebutton img {
 	background-color: #333;
 	border-radius: 50%;
+}
+div#frame1 {
+	width: 100vw;
+	height: 0;
+	margin: auto;
+
+}
+#boardtext {
+	margin-top: 25vw;
+}
+div.window {
+	width: 31.5vw;
+	height: 17vw;
+	margin: 0 .5vw .5vw .5vw;
+	border: .2vw solid lightgrey;
+	float: left;
+	text-align: center;
+	background-image: url(cavern.jpg);
+}
+div.innerwindow {
+	margin: 2vw;
+	background-color: #333;
+	color : white;
+}
+div#streamer {
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 100%;
 }
