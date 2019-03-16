@@ -16,6 +16,10 @@ body{ margin:0;
 	background-color: #333;
 	color: white;
 }
+h2 {
+	font-size: 6vw;
+	text-align: center;
+}
 .nav {
 	position: relative;
 }
@@ -64,11 +68,12 @@ div#frame1 {
 
 }
 #boardtext {
+	font-size: 4vw;
 	margin-top: 25vw;
+	padding: 6vw;
 }
 div.window {
 	width: 31.5vw;
-	height: 17vw;
 	margin: 0 .5vw .5vw .5vw;
 	border: .2vw solid lightgrey;
 	float: left;
