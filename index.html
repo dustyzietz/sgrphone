@@ -27,20 +27,18 @@
 	</div>
 	<div id="streamer">SURFBOARD REVIEWS</div>
 	<div class="droplist" id="dlist1">
-		<div class="dropitem">ROOK 14</div>
-		<div class="dropitem">Item</div>
-		<div class="dropitem">Item</div>
-		<div class="dropitem">Item</div>
-		<div class="dropitem">Item</div>
-		<div class="dropitem">Item</div>
-		<div class="dropitem">Item</div>
-		<div class="dropitem">Item</div>
+		<div class="dropitem" onclick="playmovie1()">ROOK 15</div>
+		<div class="dropitem" onclick="playmovie2()">FEVER</div>
+		<div class="dropitem" onclick="playmovie3()">NECKBEARD</div>
+		<div class="dropitem" onclick="playmovie4()">ROCKET WIDE</div>
+		<div class="dropitem" onclick="playmovie5()">
+		TACO GRINDER</div>
 		<div class="closebutton" onclick="closebutton()">
 			<img src="close.png" alt=" " width="25%" height="auto">
 			</div> 
 </div>
 <div class="droplist" id="dlist2">
-		<div class="dropitem" onclick="playmovie1()">MONSTA 6</div>
+		<div class="dropitem" onclick="playmovie5()">MONSTA 6</div>
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
@@ -85,25 +83,92 @@
 </div>
 <div id="boardtext">
 	<h2>Welcome to surf gear review<br>
- find the right board for you</h2>
+ Find the right board for you</h2>
  1. Use the VOLUME CALCULATOR to determine how many liters of volume is right for you.<br>
  2. Use the BOARD FINDER to find a list of boards from stock lists that fit you and the size of wave you will be riding.<br>
  3. WATCH REVIEWS of the models to farmiliarize yourself with the board.<br>
  4. If you want to know the volume using your own demensions use the CUSTOM VOLUME CALCULATOR.  <br>
 </div>
+<div id="displayvolcal">
+<hr>
+
+	 <h1>Volume calculator</h1>
+  <p id="p1">Enter weight:<input id="input1" type="text" size="1" value="150">Pounds</p>
+
+<button onclick="beginnerv()">Calculate beginner volume</button><br>
+<button onclick="intermediatev()">Calculate intermediate volume</button><br>
+<button onclick="expertv()">Calculate expert volume</button>
+<p> Your Perfect Shortboard Volume :<br> <span id="dis1"></span></p>
+
+
+
+	</div>
+	<div id="displaybfinder">
+<hr>
+	<h1 style="text-align:center">Find your perfect board</h1>
+	Your Volume:
+	<input type="text" id="vol" step=".1" size="2" value="24">
+	<div id="but1" onclick="findBoard()">
+	FIND BOARDS</div>
+	<div id="div1"></div>
+</div>
+
+
+<div id="displaycbvolume">
+<hr>
+	<h1>Find Custom Board Volume</h1>
+<div id="leftside">
+<h2>Stock Dimensions</h2>
+<h3>Length</h3>
+ <input type="text" size="1" maxlength="1" id="sLength1">feet<input type="text" size="1" maxlength="2" id="sLength2">inches<br>
+<h3>Width</h3>
+ <input type="text" size="1" maxlength="2" id="sWidth1">and<input type="text" size="1" maxlength="2" id="sWidth2">/
+ <input type="text" size="1" maxlength="2" value="1" id="sWidth3">inches
+ <br>
+<h3>Thickness</h3>
+ <input type="text" size="1" maxlength="1" id="sThick1">and<input type="text" size="1" maxlength="2" id="sThick2">/
+ <input type="text" size="1" maxlength="2" value="1" id="sThick3">inches
+ <br><br>
+<h3>Volume:<input type="text" size="1" maxlength="4" id="sVolume"></h3>
+
+</div>
+
+
+<div id="rightside">
+<h2>Custom Dimensions</h2>
+<h3>Length</h3>
+ <input type="text" size="1" maxlength="1" id="cLength1">feet<input type="text" size="1" maxlength="2" id="cLength2">inches<br>
+<h3>Width</h3>
+ <input type="text" size="1" maxlength="2" id="cWidth1">and<input type="text" size="1" maxlength="2" id="cWidth2">/
+ <input type="text" size="1" value="1" maxlength="2" id="cWidth3">inches
+ <br>
+<h3>Thickness</h3>
+ <input type="text" size="1" maxlength="1" id="cThick1">and<input type="text" size="1" maxlength="2" id="cThick2">/
+ <input type="text" size="1" maxlength="2" value="1" id="cThick3">inches
+ <br><br>
+<h3 >Custom Volume:<div  id="cVolumeDisplay"></div></h3>
+
+
+</div>
+<div id="clear"></div>
+<div id="cVolumeButton" onclick="findCustomVolume()">Find Custom Volume</div>
+
+
+</div>
+
 <div class="window">
- <div class="innerwindow" onclick="">
+ <div class="innerwindow" onclick="openvolcal()">
  	Surfboard <br>Volume<br>calculator
  </div>
 </div>
 
 <div class="window" >
-	<div class="innerwindow" onclick="">
+	<div class="innerwindow" onclick="openbfinder()">
 		find<br>your<br>Board</div>
 </div>
 
 <div class="window" >
-	<div class="innerwindow" onclick="">
+	<div class="innerwindow" onclick="opencbvolume()">
 		Custom<br>Board<br>Volume</div>
 </div>
 <script>
@@ -157,13 +222,315 @@
 		document.getElementById('dlist1').style.visibility = "hidden";
 		document.getElementById('dlist1').style.opacity = "0";
 	}
+	function openvolcal(){
+		document.getElementById('displayvolcal').style.height =
+		"auto";
+	}
+	function beginnerv() {
+		var bv = input1.value / 5.25 ;
+		document.getElementById("dis1").innerHTML = bv.toFixed(1) + " Liters" ;
+	}
+	function intermediatev() {
+		var bv = input1.value / 6.00 ;
+		document.getElementById("dis1").innerHTML = bv.toFixed(1) + " Liters" ;
+	}
+	function expertv() {
+		var bv = input1.value / 6.25 ;
+		document.getElementById("dis1").innerHTML = bv.toFixed(1) + " Liters" ;
+	}
+	function openbfinder(){
+		document.getElementById('displaybfinder').style.height =
+		"auto";
+	}
+	class Surfboards{
+			constructor(volume, text) {
+				this._volume = volume;
+				this._text = text;
+			}
+			get volume() {
+				return this._volume;
+			}
+			get text() {
+				return this._text;
+			}
+		}
+        let c =[];
+		c.push( new Surfboards(22.4, "Oh one 5'6 18-1/2 2-1/8 round tail"));
+	  c.push( new Surfboards(23.5, "Oh one 5'7 18-5/8 2-3/16 round tail"));
+		
+	   c.push( new Surfboards(24.00, "Oh one 5'8   18-3/4  2 3/16 round tail"));
+		
+	   c.push( new Surfboards(25.20, "Oh one 5'9   18-7/8  2-1/4 round tail"));
+		
+	   c.push( new Surfboards(26.40, "Oh one 5'10   19  2-5/16 round tail"));
+		
+	   c.push( new Surfboards(27.60, "Oh one 5'11   19-1/8  2-3/8 round tail"));
+		
+	   c.push( new Surfboards(28.80, "Oh one 6'0   19-1/4  2-7/16 round tail"));
+		
+	   c.push( new Surfboards(30.00, "Oh one 6'1	19-3/8  2-1/2 round tail"));
+		
+	   c.push(new Surfboards(31.50, "Oh one 6'2	  19-5/8  2-9/16 round tail"));
+		
+	   c.push(new Surfboards(32.70, "Oh one 6'3	  19-3/4  2-5/8 round tail"));
+		
+	   c.push(new Surfboards(33.50, "Oh one 6'4	  19-7/8  2-5/8 round tail"));   
+		
+	    c.push(new Surfboards(35.40, "Oh one 6'5   20  2-3/4  round tail"));
+		
+	    c.push(new Surfboards(37.70, "Oh one 6'6   20-1/8  2-7/8 round tail"));
+
+	    c.push(new Surfboards(23.90, "Nevada 5'8   18-1/2  2-3/16 round square tail"));
+
+	    c.push(new Surfboards(25.30, "Nevada 5'9	18-3/4  2-1/4 round square tail"));
+
+	    c.push(new Surfboards(26.50, "Nevada 5'10	18-7/8	2-5/16 round square tail"));
+
+	    c.push(new Surfboards(27.70, "Nevada 5'11	19	2-3/8 round square tail"));
+
+	    c.push(new Surfboards(29.10, "Nevada 6'0	19-1/8	2-7/16 round square tail"));
+
+	    c.push(new Surfboards(30.30, "Nevada 6'1	19-1/4	2-1/2 round square tail"));
+
+	    c.push(new Surfboards(31.70, "Nevada 6'2	19-1/2	2-9/16 round square tail"));
+
+	    c.push(new Surfboards(33.30, "Nevada 6'3	19-3/4	2-5/8 round square tail"));
+
+	    c.push(new Surfboards(34.00, "Nevada 6'4	19-7/8	2-5/8 round square tail"));
+
+	    c.push(new Surfboards(36.00	, "Nevada 6'6	20-1/4	2-3/4 round square tail"));
+
+	    c.push(new Surfboards(38.00	, "Nevada 6'8	20-1/2	2-3/4 round square tail"));
+
+	    c.push(new Surfboards(41.10, "Nevada 6'10	21 2-7/8 round square tail"));
+
+	    c.push(new Surfboards(22.50, "Fader 5'8   18-3/8	2-1/8 thumb tail"));
+
+	    c.push(new Surfboards(23.10, "Fader 5'9	  18-1/2	2-1/8 thumb tail"));
+
+	    c.push(new Surfboards(24.50, "Fader 5'10	18-5/8	2-3/16 thumb tail"));
+
+	    c.push(new Surfboards(25.80, "Fader 5'11	18-3/4	2-1/4 thumb tail"));
+
+	    c.push(new Surfboards(27.00, "Fader 6'0    18-7/8	2-3/8 thumb tail"));
+
+	    c.push(new Surfboards(28.30, "Fader 6'1	   19	2-7/16 thumb tail"));
+
+	    c.push(new Surfboards(29.40, "Fader 6'2   19-1/8	2-1/2 thumb tail"));
+
+	    c.push(new Surfboards(30.60, "Fader 6'3	   19-1/4	 2-9/16 thumb tail"));
+
+	    c.push(new Surfboards(31.90, "Fader 6'4	  19-3/8	2-5/8 thumb tail"));
+
+	    c.push(new Surfboards(32.30, "Fader 6'5   19-3/8	2-3/8 thumb tail"));
+
+	    c.push(new Surfboards(33.00, "Fader 6'6	  19-1/2	2-5/8 thumb tail"));
+
+	    c.push(new Surfboards(23.70, "Rare Bird 5'4	19	2 3/16 thumb tail"));
+
+	    c.push(new Surfboards(24.80, "Rare Bird 5'5	19-1/8	2-1/4 thumb tail"));
+
+	    c.push(new Surfboards(25.30, "Rare Bird 5'6	19-1/4 2-1/4 thumb tail"));
+
+        c.push(new Surfboards(26.50, "Rare Bird 5'7	19-3/8	2-5/16 thumb tail"));
+
+        c.push(new Surfboards(27.70, "Rare Bird 5'8	19-1/2	2-3/8 thumb tail"));
+
+        c.push(new Surfboards(28.30, "Rare Bird 5'9	19-5/8	2-7/16 thumb tail"));
+
+        c.push(new Surfboards(30.30, "Rare Bird 5'10	19-3/4	2-1/2 thumb tail"));
+
+	    c.push(new Surfboards(31.00, "Rare Bird 5'11	19-7/8	2-1/2 thumb tail"));
+
+	    c.push(new Surfboards(33.00, "Rare Bird 6'0	20	2-5/8 thumb tail"));
+
+	    c.push(new Surfboards(33.70, "Rare Bird 6'1	20-1/8	2-5/8 thumb tail"));
+
+	    c.push(new Surfboards(35.70, "Rare Bird 6'2	20-1/4	2-3/4 thumb tail"));
+
+	    c.push(new Surfboards(36.30, "Rare Bird 6'3	20-3/8	2-3/4 thumb tail"));
+
+	    c.push(new Surfboards(37.00, "Rare Bird 6'4	20-1/2	2-3/4 thumb tail"));
+
+        c.push(new Surfboards(37.50, "Rare Bird 6'5	20-1/2	2-3/4 thumb tail"));
+
+	    c.push(new Surfboards(38.60, "Rare Bird 6'6	20-1/2	2-7/8 thumb tail"));
+
+
+	     
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		function findBoard() {
+			let myBoards =[];
+			let myVolume = Number(document.getElementById('vol').value);
+			for(let i = 0; i < c.length; i++){
+				if(c[i].volume + .6 >= myVolume && c[i].volume - .6  <= myVolume){
+				myBoards.push('volume');	
+               myBoards.push(c[i].volume);
+               myBoards.push(c[i].text);
+               myBoards.push('<br>');
+               
+				}
+			}
+			document.getElementById('div1').innerHTML = myBoards.join(' ');
+		}
+		function opencbvolume(){
+		document.getElementById('displaycbvolume').style.height =
+		"auto";
+	}
+			let findCustomVolume = function () {
+let stockLength = (sLength1.value * 12) + Number(sLength2.value);
+let stockVolume = sVolume.value;
+let stockWidth = Number(sWidth1.value) + sWidth2.value / sWidth3.value;
+let stockThick = Number(sThick1.value) + sThick2.value / sThick3.value;
+let customLength = (cLength1.value * 12) + Number(cLength2.value);
+let customWidth = Number(cWidth1.value) + cWidth2.value / cWidth3.value;
+let customThick = Number(cThick1.value) + cThick2.value / cThick3.value;
+let customVolume = (customLength / stockLength) * (customWidth / stockWidth) * (customThick / stockThick) * stockVolume;
+document.getElementById('cVolumeDisplay').innerHTML = customVolume ;
+
+}
+	
 	function playmovie1() {
 		document.getElementById('frame1').style.height = "57vw";
-		document.getElementById('if1').src = "https://www.youtube.com/embed/5TUj202lA_o";
+		document.getElementById('if1').src = "https://www.youtube.com/embed/qTpMJNMvHvI";
 		closebutton();
-		document.getElementById('boardtext').innerHTML = "THE BEST ALWAYS FINDS A WAY TO GET BETTER <br>This is our best high performance all-rounder yet, improved and fine-tuned by the entire Traktor Team. 8 years after the original Monsta built its reputation as a go-to for surfers around the world, from WSL podiums to everyday sessions and annual Indo trips, the Monsta 8 is the result of nearly a decade’s worth of R&D. <br>With so many epic but contrasting styles throughout the Traktor Team, JS spent months gathering input from absolutely everyone. It had to cater for some of the best pure rail games in the world in Parko and Ace, the aerial freak shows of Mikey, Ryan & Dusty, and the crazy versatility of Julian and Owen. There’s a little bit of everyone in the Monsta 8, with it becoming the new gold standard under the entire team’s feet. From Owen starting his comeback at Snapper on one of our key M8 prototypes, to JS and Joel constantly testing & improving on the latest changes together, we couldn’t be happier with the results.<br>First, the rocker has been tweaked to have slightly more curve in both the nose and tail. The last two inches of nose rocker have been lifted to prevent catching in quality waves, while the adjustments to the tail curve provide extra release. Concaves have been deepened through the fins creating more speed and removing drag, while maintaining maximum control. The outline also has a more pronounced hip, allowing for quicker, more responsive direction changes. The Monsta 8 prompts intuitive, fast and flowing surfing, and has an outline to match.<br>We’ve refined the Monsta 8 to the point where everyone from longtime weekend warriors to world champs are calling it their favourite performance driven all-rounder ever. And now, it’s ready for everyone else to ride and enjoy in a huge range of waves around the globe. The best always find a way to get better."
-
-;
+		document.getElementById('boardtext').innerHTML =  
+		"Rook 15<br>First seen on the WCT tour in 2010, the Rookie has been rediscovered by our entire CT team this year; Seabass, Kelly, Adriano, Lakey, Bianca, Sage and Kai all have won heats on the new Rookie 15. Ridden shorter and wider than the original, the Rook 15 is the ultimate contest workhorse.  Single concave throughout, the Rook 15 works best when on rail. Ride this board your same height to 2 inches longer. ";}
+		function playmovie2() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "https://www.youtube.com/embed/zxjPfZvuEY8";
+		closebutton();
+		document.getElementById('boardtext').innerHTML =  
+		"The Fever has its roots in Al Merrick’s trusted and proven high performance short board designs. The goal in designing this board with Mike Andrews and Patrick Gudauskas was to create a more accessible tour level performance board that anyone who jumped onto it would “instantly feel the speed and zest for creativity.” Borrowing Pat’s favorite elements of the Proton, Rookie and MBM, and combining them with a subtle single concave and lower rocker resulted in a board with a huge sweet spot. With a slightly more parallel outline and forgiving rocker the Fever has proven to be an all-around design that excels in a wide range of conditions and wave types.";}
+		function playmovie3() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "https://www.youtube.com/embed/yFEz4jOP8gc";
+		closebutton();
+		document.getElementById('boardtext').innerHTML =  
+		" Neck Beard 2<br>When something isn’t broke, there’s no need to fix it. That said, Britt Merrick and Dane Reynolds still felt a few slight refinements would make an already epic board that much better. And it did: The merits to this update can be seen in Dane’s new surf film “The Electric Acid Surfboard Test.”<br>A big fan of single concave, Dane asked Britt to take out the vee from the original Neck Beard, creating single throughout. This changed the rocker landscape some, but in a very positive way—enhancing its wave entry, down-the-line speed, and overall control. They also widened the tail block 1/2” and added a slight hip, resulting in increased responsiveness and maneuverability.<br>Dane prefers the Neckbeard 2 as a tri-fin, but those that like quads may notice added down-the-line speed. It comes with a five-fin setup to get the best of both worlds.  Available in both PU/PE and EPS Spine-Tek.";}
+		function playmovie4() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "https://www.youtube.com/embed/4d2IGtqmePQ";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "Introducing the Rocket Wide.  The incredibly user-friendly cousin of the Rocket 9<br>“My brothers and I loved the speed and control we were feeling with the Rocket 9 and we wanted to see how we could apply those same levels of fun and performance to a board for small and gutless waves.  The Rocket Wide features a wider tail block to skate across flat sections and a wider nose area to accommodate for better paddle power.  It’s a shorter, wider skate machine designed to lift the fun factor when the waves are not a their best.  So don’t let those small days get you down cause the Rocket Wide is ready for blast off!!” -Dane ";
+	}
+	function playmovie5() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "https://www.youtube.com/embed/u6tO6AYg4h4";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "Taco Grinder<br>Originating as a board for navigating long barrels in Mexico, the Taco Grinder is a direct result of CI team demanding shortboard performance in waves that require a semi-gun or step-up.  Bottom is single concave throughout, a fuller rail and tail kick make it good paddler that still goes vertical. In short, a versatile high performance step-up designed for advanced surfers who want to take their good wave performance to the next level.  Ride this board the same width and thickness as your all-around performance board, but 2” to 6” longer depending on how big the waves are. ";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
+	}
+	function playmovie0() {
+		document.getElementById('frame1').style.height = "57vw";
+		document.getElementById('if1').src = "";
+		closebutton();
+		document.getElementById('boardtext').innerHTML = "";
 	}
 	</script>
 </body>

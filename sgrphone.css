@@ -91,3 +91,18 @@ div#streamer {
 	top: 0;
 	width: 100%;
 }
+#displayvolcal {
+	height: 0;
+	overflow: hidden;
+	text-align: center;
+}
+#displaybfinder {
+	height: 0;
+	overflow: hidden;
+	text-align: center;
+}
+#displaycbvolume {
+	height: 0;
+	overflow: hidden;
+	text-align: center;
+}
