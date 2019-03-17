@@ -33,8 +33,8 @@
 		<div class="dropitem" onclick="playmovie4()">ROCKET WIDE</div>
 		<div class="dropitem" onclick="playmovie5()">
 		TACO GRINDER</div>
-		<div class="closebutton" onclick="closebutton()">
-			<img src="close.png" alt=" " width="25%" height="auto">
+		<div class="closebutton">
+			<img onclick="closebutton()" src="close.png" alt=" " width="100%" height="auto">
 			</div> 
 </div>
 <div class="droplist" id="dlist2">
@@ -47,7 +47,7 @@
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
 		<div class="closebutton" onclick="closebutton()">
-			<img src="close.png" alt=" " width="25%" height="auto">
+			<img src="close.png" alt=" " width="100%" height="auto">
 			</div> 
 </div>
 <div class="droplist" id="dlist3">
@@ -60,7 +60,7 @@
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
 		<div class="closebutton" onclick="closebutton()">
-			<img src="close.png" alt=" " width="25%" height="auto">
+			<img src="close.png" alt=" " width="100%" height="auto">
 			</div> 
 </div>
 <div class="droplist" id="dlist4">
@@ -73,26 +73,38 @@
 		<div class="dropitem">Item</div>
 		<div class="dropitem">Item</div>
 		<div class="closebutton" onclick="closebutton()">
-			<img src="close.png" alt=" " width="25%" height="auto">
+			<img src="close.png" alt=" " width="100%" height="auto">
 			</div> 
 </div>
 </div>
+
 <div id="frame1">
 	<iframe id="if1" src="https://www.youtube.com/embed/zonYOhlSePk?autoplay=0" name="if1" width="100%" height="100%"  allow="autoplay" >
 	</iframe>
 </div>
 <div id="boardtext">
-	<h2>Welcome to surf gear review<br>
+	 
+	 <h2>Welcome to surf gear review<br>
  Find the right board for you</h2>
+
  1. Use the VOLUME CALCULATOR to determine how many liters of volume is right for you.<br>
  2. Use the BOARD FINDER to find a list of boards from stock lists that fit you and the size of wave you will be riding.<br>
  3. WATCH REVIEWS of the models to farmiliarize yourself with the board.<br>
- 4. If you want to know the volume using your own demensions use the CUSTOM VOLUME CALCULATOR.  <br>
+ 4. If you want to know the volume using your own demensions use the CUSTOM VOLUME CALCULATOR.
+
+
 </div>
+<div id="closebutton3" onclick="closebutton5()">
+	<img  src="close.png" alt=" " width="100%" height="auto">
+			</div> 
+			<div style="clear:both;"></div>
 <div id="displayvolcal">
 <hr>
+ <div class="closebutton2" onclick="closebutton2()">
+			<img src="close.png" alt=" " width="100%" height="auto">
+			</div>
+	 <h2>Volume calculator</h2>
 
-	 <h1>Volume calculator</h1>
   <p id="p1">Enter weight:<input id="input1" type="text" size="1" value="150">Pounds</p>
 
 <button onclick="beginnerv()">Calculate beginner volume</button><br>
@@ -105,7 +117,10 @@
 	</div>
 	<div id="displaybfinder">
 <hr>
-	<h1 style="text-align:center">Find your perfect board</h1>
+<div class="closebutton2" onclick="closebutton3()">
+			<img src="close.png" alt=" " width="100%" height="auto">
+			</div>
+	<h2 style="text-align:center">Find your perfect board</h2>
 	Your Volume:
 	<input type="text" id="vol" step=".1" size="2" value="24">
 	<div id="but1" onclick="findBoard()">
@@ -116,7 +131,10 @@
 
 <div id="displaycbvolume">
 <hr>
-	<h1>Find Custom Board Volume</h1>
+<div class="closebutton2" onclick="closebutton4()">
+			<img src="close.png" alt=" " width="100%" height="auto">
+			</div>
+	<h2>Find Custom Board Volume</h2>
 <div id="leftside">
 <h2>Stock Dimensions</h2>
 <h3>Length</h3>
@@ -222,6 +240,21 @@
 		document.getElementById('dlist1').style.visibility = "hidden";
 		document.getElementById('dlist1').style.opacity = "0";
 	}
+	function closebutton2(){
+		document.getElementById('displayvolcal').style.height = "0";
+		}
+		function closebutton3(){
+		document.getElementById('displaybfinder').style.height = "0";
+		}
+		function closebutton4(){
+		document.getElementById('displaycbvolume').style.height = "0";
+		}
+		function closebutton5(){
+		document.getElementById('boardtext').innerHTML = "";
+		document.getElementById('closebutton3').style.display = "none";
+		document.getElementById('frame1').style.height = "0";
+		document.getElementById('if1').src = "";
+		}
 	function openvolcal(){
 		document.getElementById('displayvolcal').style.height =
 		"auto";
@@ -416,31 +449,34 @@ document.getElementById('cVolumeDisplay').innerHTML = customVolume ;
 		document.getElementById('frame1').style.height = "57vw";
 		document.getElementById('if1').src = "https://www.youtube.com/embed/qTpMJNMvHvI";
 		closebutton();
+		document.getElementById('closebutton3').style.display = "block";
 		document.getElementById('boardtext').innerHTML =  
-		"Rook 15<br>First seen on the WCT tour in 2010, the Rookie has been rediscovered by our entire CT team this year; Seabass, Kelly, Adriano, Lakey, Bianca, Sage and Kai all have won heats on the new Rookie 15. Ridden shorter and wider than the original, the Rook 15 is the ultimate contest workhorse.  Single concave throughout, the Rook 15 works best when on rail. Ride this board your same height to 2 inches longer. ";}
+		"<h2>Rook 15</h2>First seen on the WCT tour in 2010, the Rookie has been rediscovered by our entire CT team this year; Seabass, Kelly, Adriano, Lakey, Bianca, Sage and Kai all have won heats on the new Rookie 15. Ridden shorter and wider than the original, the Rook 15 is the ultimate contest workhorse.  Single concave throughout, the Rook 15 works best when on rail. Ride this board your same height to 2 inches longer. ";}
 		function playmovie2() {
+			document.getElementById('closebutton3').style.display = "block";
 		document.getElementById('frame1').style.height = "57vw";
 		document.getElementById('if1').src = "https://www.youtube.com/embed/zxjPfZvuEY8";
 		closebutton();
 		document.getElementById('boardtext').innerHTML =  
-		"The Fever has its roots in Al Merrick’s trusted and proven high performance short board designs. The goal in designing this board with Mike Andrews and Patrick Gudauskas was to create a more accessible tour level performance board that anyone who jumped onto it would “instantly feel the speed and zest for creativity.” Borrowing Pat’s favorite elements of the Proton, Rookie and MBM, and combining them with a subtle single concave and lower rocker resulted in a board with a huge sweet spot. With a slightly more parallel outline and forgiving rocker the Fever has proven to be an all-around design that excels in a wide range of conditions and wave types.";}
+		"<h2>Fever</h2>The Fever has its roots in Al Merrick’s trusted and proven high performance short board designs. The goal in designing this board with Mike Andrews and Patrick Gudauskas was to create a more accessible tour level performance board that anyone who jumped onto it would “instantly feel the speed and zest for creativity.” Borrowing Pat’s favorite elements of the Proton, Rookie and MBM, and combining them with a subtle single concave and lower rocker resulted in a board with a huge sweet spot. With a slightly more parallel outline and forgiving rocker the Fever has proven to be an all-around design that excels in a wide range of conditions and wave types.";}
 		function playmovie3() {
+			document.getElementById('closebutton3').style.display = "block";
 		document.getElementById('frame1').style.height = "57vw";
 		document.getElementById('if1').src = "https://www.youtube.com/embed/yFEz4jOP8gc";
 		closebutton();
 		document.getElementById('boardtext').innerHTML =  
-		" Neck Beard 2<br>When something isn’t broke, there’s no need to fix it. That said, Britt Merrick and Dane Reynolds still felt a few slight refinements would make an already epic board that much better. And it did: The merits to this update can be seen in Dane’s new surf film “The Electric Acid Surfboard Test.”<br>A big fan of single concave, Dane asked Britt to take out the vee from the original Neck Beard, creating single throughout. This changed the rocker landscape some, but in a very positive way—enhancing its wave entry, down-the-line speed, and overall control. They also widened the tail block 1/2” and added a slight hip, resulting in increased responsiveness and maneuverability.<br>Dane prefers the Neckbeard 2 as a tri-fin, but those that like quads may notice added down-the-line speed. It comes with a five-fin setup to get the best of both worlds.  Available in both PU/PE and EPS Spine-Tek.";}
+		" <h2>Neck Beard 2</h2>When something isn’t broke, there’s no need to fix it. That said, Britt Merrick and Dane Reynolds still felt a few slight refinements would make an already epic board that much better. And it did: The merits to this update can be seen in Dane’s new surf film “The Electric Acid Surfboard Test.”<br>A big fan of single concave, Dane asked Britt to take out the vee from the original Neck Beard, creating single throughout. This changed the rocker landscape some, but in a very positive way—enhancing its wave entry, down-the-line speed, and overall control. They also widened the tail block 1/2” and added a slight hip, resulting in increased responsiveness and maneuverability.<br>Dane prefers the Neckbeard 2 as a tri-fin, but those that like quads may notice added down-the-line speed. It comes with a five-fin setup to get the best of both worlds.  Available in both PU/PE and EPS Spine-Tek.";}
 		function playmovie4() {
 		document.getElementById('frame1').style.height = "57vw";
 		document.getElementById('if1').src = "https://www.youtube.com/embed/4d2IGtqmePQ";
 		closebutton();
-		document.getElementById('boardtext').innerHTML = "Introducing the Rocket Wide.  The incredibly user-friendly cousin of the Rocket 9<br>“My brothers and I loved the speed and control we were feeling with the Rocket 9 and we wanted to see how we could apply those same levels of fun and performance to a board for small and gutless waves.  The Rocket Wide features a wider tail block to skate across flat sections and a wider nose area to accommodate for better paddle power.  It’s a shorter, wider skate machine designed to lift the fun factor when the waves are not a their best.  So don’t let those small days get you down cause the Rocket Wide is ready for blast off!!” -Dane ";
+		document.getElementById('boardtext').innerHTML = "<h2>Rocket Wide</h2>Introducing the Rocket Wide.  The incredibly user-friendly cousin of the Rocket 9<br>“My brothers and I loved the speed and control we were feeling with the Rocket 9 and we wanted to see how we could apply those same levels of fun and performance to a board for small and gutless waves.  The Rocket Wide features a wider tail block to skate across flat sections and a wider nose area to accommodate for better paddle power.  It’s a shorter, wider skate machine designed to lift the fun factor when the waves are not a their best.  So don’t let those small days get you down cause the Rocket Wide is ready for blast off!!” -Dane ";
 	}
 	function playmovie5() {
 		document.getElementById('frame1').style.height = "57vw";
 		document.getElementById('if1').src = "https://www.youtube.com/embed/u6tO6AYg4h4";
 		closebutton();
-		document.getElementById('boardtext').innerHTML = "Taco Grinder<br>Originating as a board for navigating long barrels in Mexico, the Taco Grinder is a direct result of CI team demanding shortboard performance in waves that require a semi-gun or step-up.  Bottom is single concave throughout, a fuller rail and tail kick make it good paddler that still goes vertical. In short, a versatile high performance step-up designed for advanced surfers who want to take their good wave performance to the next level.  Ride this board the same width and thickness as your all-around performance board, but 2” to 6” longer depending on how big the waves are. ";
+		document.getElementById('boardtext').innerHTML = "<h2>Taco Grinder</h2>Originating as a board for navigating long barrels in Mexico, the Taco Grinder is a direct result of CI team demanding shortboard performance in waves that require a semi-gun or step-up.  Bottom is single concave throughout, a fuller rail and tail kick make it good paddler that still goes vertical. In short, a versatile high performance step-up designed for advanced surfers who want to take their good wave performance to the next level.  Ride this board the same width and thickness as your all-around performance board, but 2” to 6” longer depending on how big the waves are. ";
 	}
 	function playmovie0() {
 		document.getElementById('frame1').style.height = "57vw";

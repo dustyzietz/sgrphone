@@ -9,7 +9,7 @@ body{ margin:0;
 	background-image: url(cavern.jpg);
 	text-align: center;
 	margin:0;
-	padding: 2vw;
+	padding: 2vw;	
 }
 .header h1 {
 	margin:0;
@@ -17,11 +17,14 @@ body{ margin:0;
 	color: white;
 }
 h2 {
+	padding: 2vw;
 	font-size: 6vw;
 	text-align: center;
 }
 .nav {
 	position: relative;
+	height: 20vw;
+	border-bottom: 2px solid #333;
 }
 .reviewdrop {
 	width:24.9%;
@@ -53,24 +56,47 @@ div.droplist:last-child {
 	border: none;
 }
 div.closebutton {
-	position: absolute;
-	right: -18vw;
 	top: 1vw;
+	right: 1vw;
+	width: 15vw;
+	position: absolute;
+	
 }
 div.closebutton img {
+	background-color: #333;
+	border-radius: 50%;
+}
+div.closebutton2 {
+	float: right;
+	width: 15vw;
+	;
+	
+}
+div#closebutton2 img {
+	background-color: #333;
+	border-radius: 50%;
+}
+div#closebutton3 {
+	float: right;
+	width: 15vw;
+	
+}
+div.closebutton3 img {
 	background-color: #333;
 	border-radius: 50%;
 }
 div#frame1 {
 	width: 100vw;
 	height: 0;
-	margin: auto;
-
+    margin: auto;	
+}
+iframe {
+	border: 0;
 }
 #boardtext {
 	font-size: 4vw;
-	margin-top: 25vw;
-	padding: 6vw;
+	margin-top: 0;
+	padding: 0 6vw;
 }
 div.window {
 	width: 31.5vw;
