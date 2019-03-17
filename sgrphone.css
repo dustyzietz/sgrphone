@@ -4,6 +4,9 @@ sgr.css
 }
 body{ margin:0;
        }
+input{
+	font-size: 6vw;
+}
 
 .header {
 	background-image: url(cavern.jpg);
@@ -17,6 +20,7 @@ body{ margin:0;
 	color: white;
 }
 h2 {
+	margin: 0;
 	padding: 2vw;
 	font-size: 6vw;
 	text-align: center;
@@ -131,4 +135,11 @@ div#streamer {
 	height: 0;
 	overflow: hidden;
 	text-align: center;
+}
+.button {
+	padding:2vw 4vw;
+	margin: 1vw;
+	background-color: black;
+	color: white;
+	border-radius: 5vw;
 }

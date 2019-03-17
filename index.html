@@ -103,14 +103,15 @@
  <div class="closebutton2" onclick="closebutton2()">
 			<img src="close.png" alt=" " width="100%" height="auto">
 			</div>
+
 	 <h2>Volume calculator</h2>
-
-  <p id="p1">Enter weight:<input id="input1" type="text" size="1" value="150">Pounds</p>
-
-<button onclick="beginnerv()">Calculate beginner volume</button><br>
-<button onclick="intermediatev()">Calculate intermediate volume</button><br>
-<button onclick="expertv()">Calculate expert volume</button>
-<p> Your Perfect Shortboard Volume :<br> <span id="dis1"></span></p>
+  Enter weight:<input id="input1" type="text" size="3" value="150">Pounds
+<br><br>
+<span class="button" onclick="beginnerv()">Calculate beginner volume</span><br><br>
+<span class="button" onclick="intermediatev()">Calculate intermediate volume</span><br><br>
+<span class="button" onclick="expertv()">Calculate expert volume
+</span><br><br>
+ Your Perfect Shortboard Volume :<h2><div id="dis1"></div><h2>
 
 
 
@@ -123,8 +124,8 @@
 	<h2 style="text-align:center">Find your perfect board</h2>
 	Your Volume:
 	<input type="text" id="vol" step=".1" size="2" value="24">
-	<div id="but1" onclick="findBoard()">
-	FIND BOARDS</div>
+	<span class="button" onclick="findBoard()">
+	FIND BOARDS</span><br><br>
 	<div id="div1"></div>
 </div>
 
@@ -137,39 +138,40 @@
 	<h2>Find Custom Board Volume</h2>
 <div id="leftside">
 <h2>Stock Dimensions</h2>
-<h3>Length</h3>
- <input type="text" size="1" maxlength="1" id="sLength1">feet<input type="text" size="1" maxlength="2" id="sLength2">inches<br>
-<h3>Width</h3>
+Length:
+ <input type="text" size="1" maxlength="1" id="sLength1">feet<input type="text" size="1" maxlength="2" id="sLength2">inches<br><br>
+Width:
  <input type="text" size="1" maxlength="2" id="sWidth1">and<input type="text" size="1" maxlength="2" id="sWidth2">/
  <input type="text" size="1" maxlength="2" value="1" id="sWidth3">inches
- <br>
-<h3>Thickness</h3>
+ <br><br>
+Thickness:
  <input type="text" size="1" maxlength="1" id="sThick1">and<input type="text" size="1" maxlength="2" id="sThick2">/
  <input type="text" size="1" maxlength="2" value="1" id="sThick3">inches
  <br><br>
-<h3>Volume:<input type="text" size="1" maxlength="4" id="sVolume"></h3>
+Volume:<input type="text" size="1" maxlength="4" id="sVolume">
 
 </div>
 
 
 <div id="rightside">
 <h2>Custom Dimensions</h2>
-<h3>Length</h3>
- <input type="text" size="1" maxlength="1" id="cLength1">feet<input type="text" size="1" maxlength="2" id="cLength2">inches<br>
-<h3>Width</h3>
+Length:
+ <input type="text" size="1" maxlength="1" id="cLength1">feet<input type="text" size="1" maxlength="2" id="cLength2">inches<br><br>
+Width:
  <input type="text" size="1" maxlength="2" id="cWidth1">and<input type="text" size="1" maxlength="2" id="cWidth2">/
  <input type="text" size="1" value="1" maxlength="2" id="cWidth3">inches
- <br>
-<h3>Thickness</h3>
+ <br><br>
+Thickness:
  <input type="text" size="1" maxlength="1" id="cThick1">and<input type="text" size="1" maxlength="2" id="cThick2">/
  <input type="text" size="1" maxlength="2" value="1" id="cThick3">inches
  <br><br>
-<h3 >Custom Volume:<div  id="cVolumeDisplay"></div></h3>
+ <span class="button" onclick="findCustomVolume()">Find Custom Volume</span><br><br>
+
+Custom Volume:<h2><div  id="cVolumeDisplay"></div><h2>
 
 
 </div>
-<div id="clear"></div>
-<div id="cVolumeButton" onclick="findCustomVolume()">Find Custom Volume</div>
+
 
 
 </div>
