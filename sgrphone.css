@@ -36,7 +36,7 @@ h2 {
 	float: left;
 }
 .drop1 {
-	padding-top: 2vw;
+	padding: 2vw 0;
 }
 div.droplist {
 	position: absolute;
@@ -142,4 +142,16 @@ div#streamer {
 	background-color: black;
 	color: white;
 	border-radius: 5vw;
+}
+.logobutton {
+	width:19.9%;
+	height:16vw;
+	float: left;
+	border-radius: 2vw ;
+	-webkit-filter: invert(100%);
+	filter: invert(100%);
+	overflow: hidden;
+	margin:2.5% ;
+
+
 }

@@ -1,3 +1,8 @@
+function showfilteroptions(){
+	document.getElementById('filterbuttons').style.display = "block";
+
+}
+
 function dropmenu1() {
 		document.getElementById('dlist1').style.visibility = "visible";
 		document.getElementById('dlist1').style.opacity = "1";
@@ -83,12 +88,19 @@ function dropmenu1() {
 		document.getElementById('displaybfinder').style.height =
 		"auto";
 	}
+	
+	
 	class Surfboards{
-			constructor(volume, text, height, playfunction) {
+			constructor(company, volume, text, height, playfunction,wavesize) {
+				this._company = company;
 				this._volume = volume;
 				this._text = text;
 				this._height = height;
 				this._playfunction = playfunction;
+				this._wavesize = wavesize;
+			}
+			get company() {
+				return this._company;
 			}
 			get volume() {
 				return this._volume;
@@ -102,250 +114,262 @@ function dropmenu1() {
 			get playfunction() {
 				return this._playfunction;
 			}
+			get wavesize() {
+				return this._wavesize;
+			
+			}
 		}
         let c =[];
-		c.push( new Surfboards(22.4, "Oh one 5'6 18-1/2 2-1/8 round tail",66,"playchili3()"));
-	  c.push( new Surfboards(23.5, "Oh one 5'7 18-5/8 2-3/16 round tail",67,"playchili3()"));
+		c.push( new Surfboards("chili",22.4, "Oh one 5'6 18-1/2 2-1/8 round tail",66,"playchili3()",2));
+	  c.push( new Surfboards("chili",23.5, "Oh one 5'7 18-5/8 2-3/16 round tail",67,"playchili3()",2));
 		
-	   c.push( new Surfboards(24.00, "Oh one 5'8   18-3/4  2 3/16 round tail",68,"playchili3()"));
+	   c.push( new Surfboards("chili",24.00, "Oh one 5'8   18-3/4  2 3/16 round tail",68,"playchili3()",2));
 		
-	   c.push( new Surfboards(25.20, "Oh one 5'9   18-7/8  2-1/4 round tail",69,"playchili3()"));
+	   c.push( new Surfboards("chili",25.20, "Oh one 5'9   18-7/8  2-1/4 round tail",69,"playchili3()",2));
 		
-	   c.push( new Surfboards(26.40, "Oh one 5'10   19  2-5/16 round tail",70,"playchili3()"));
+	   c.push( new Surfboards("chili",26.40, "Oh one 5'10   19  2-5/16 round tail",70,"playchili3()",2));
 		
-	   c.push( new Surfboards(27.60, "Oh one 5'11   19-1/8  2-3/8 round tail",71,"playchili3()"));
+	   c.push( new Surfboards("chili",27.60, "Oh one 5'11   19-1/8  2-3/8 round tail",71,"playchili3()",2));
 		
-	   c.push( new Surfboards(28.80, "Oh one 6'0   19-1/4  2-7/16 round tail",72,"playchili3()"));
+	   c.push( new Surfboards("chili",28.80, "Oh one 6'0   19-1/4  2-7/16 round tail",72,"playchili3()",2));
 		
-	   c.push( new Surfboards(30.00, "Oh one 6'1	19-3/8  2-1/2 round tail",73,"playchili3()"));
+	   c.push( new Surfboards("chili",30.00, "Oh one 6'1	19-3/8  2-1/2 round tail",73,"playchili3()",2));
 		
-	   c.push(new Surfboards(31.50, "Oh one 6'2	  19-5/8  2-9/16 round tail",74,"playchili3()"));
+	   c.push(new Surfboards("chili",31.50, "Oh one 6'2	  19-5/8  2-9/16 round tail",74,"playchili3()",2));
 		
-	   c.push(new Surfboards(32.70, "Oh one 6'3	  19-3/4  2-5/8 round tail",75,"playchili3()"));
+	   c.push(new Surfboards("chili",32.70, "Oh one 6'3	  19-3/4  2-5/8 round tail",75,"playchili3()",2));
 		
-	   c.push(new Surfboards(33.50, "Oh one 6'4	  19-7/8  2-5/8 round tail",76,"playchili3()"));   
+	   c.push(new Surfboards("chili",33.50, "Oh one 6'4	  19-7/8  2-5/8 round tail",76,"playchili3()",2));   
 		
-	    c.push(new Surfboards(35.40, "Oh one 6'5   20  2-3/4  round tail",77,"playchili3()"));
+	    c.push(new Surfboards("chili",35.40, "Oh one 6'5   20  2-3/4  round tail",77,"playchili3()",2));
 		
-	    c.push(new Surfboards(37.70, "Oh one 6'6   20-1/8  2-7/8 round tail",78,"playchili3()"));
+	    c.push(new Surfboards("chili",37.70, "Oh one 6'6   20-1/8  2-7/8 round tail",78,"playchili3()",2));
 
-	    c.push(new Surfboards(23.90, "Nevada 5'8   18-1/2  2-3/16 round square tail",68,"playchili5()"));
+	    c.push(new Surfboards("chili",23.90, "Nevada 5'8   18-1/2  2-3/16 round square tail",68,"playchili5()",2));
 
-	    c.push(new Surfboards(25.30, "Nevada 5'9	18-3/4  2-1/4 round square tail",69,"playchili5()"));
+	    c.push(new Surfboards("chili",25.30, "Nevada 5'9	18-3/4  2-1/4 round square tail",69,"playchili5()",2));
 
-	    c.push(new Surfboards(26.50, "Nevada 5'10	18-7/8	2-5/16 round square tail",70,"playchili5()"));
+	    c.push(new Surfboards("chili",26.50, "Nevada 5'10	18-7/8	2-5/16 round square tail",70,"playchili5()",2));
 
-	    c.push(new Surfboards(27.70, "Nevada 5'11	19	2-3/8 round square tail",71,"playchili5()"));
+	    c.push(new Surfboards("chili",27.70, "Nevada 5'11	19	2-3/8 round square tail",71,"playchili5()",2));
 
-	    c.push(new Surfboards(29.10, "Nevada 6'0	19-1/8	2-7/16 round square tail",72,"playchili5()"));
+	    c.push(new Surfboards("chili",29.10, "Nevada 6'0	19-1/8	2-7/16 round square tail",72,"playchili5()",2));
 
-	    c.push(new Surfboards(30.30, "Nevada 6'1	19-1/4	2-1/2 round square tail",73,"playchili5()"));
+	    c.push(new Surfboards("chili",30.30, "Nevada 6'1	19-1/4	2-1/2 round square tail",73,"playchili5()",2));
 
-	    c.push(new Surfboards(31.70, "Nevada 6'2	19-1/2	2-9/16 round square tail",74,"playchili5()"));
+	    c.push(new Surfboards("chili",31.70, "Nevada 6'2	19-1/2	2-9/16 round square tail",74,"playchili5()",2));
 
-	    c.push(new Surfboards(33.30, "Nevada 6'3	19-3/4	2-5/8 round square tail",75,"playchili5()"));
+	    c.push(new Surfboards("chili",33.30, "Nevada 6'3	19-3/4	2-5/8 round square tail",75,"playchili5()",2));
 
-	    c.push(new Surfboards(34.00, "Nevada 6'4	19-7/8	2-5/8 round square tail",76,"playchili5()"));
+	    c.push(new Surfboards("chili",34.00, "Nevada 6'4	19-7/8	2-5/8 round square tail",76,"playchili5()",2));
 
-	    c.push(new Surfboards(36.00	, "Nevada 6'6	20-1/4	2-3/4 round square tail",77,"playchili5()"));
+	    c.push(new Surfboards("chili",36.00	, "Nevada 6'6	20-1/4	2-3/4 round square tail",77,"playchili5()",2));
 
-	    c.push(new Surfboards(38.00	, "Nevada 6'8	20-1/2	2-3/4 round square tail",78,"playchili5()"));
+	    c.push(new Surfboards("chili",38.00	, "Nevada 6'8	20-1/2	2-3/4 round square tail",78,"playchili5()",2));
 
-	    c.push(new Surfboards(41.10, "Nevada 6'10	21 2-7/8 round square tail",79,"playchili5()"));
+	    c.push(new Surfboards("chili",41.10, "Nevada 6'10	21 2-7/8 round square tail",79,"playchili5()",2));
 
-	    c.push(new Surfboards(22.50, "Fader 5'8   18-3/8	2-1/8 thumb tail",68,"playchili2()"));
+	    c.push(new Surfboards("chili",22.50, "Fader 5'8   18-3/8	2-1/8 thumb tail",68,"playchili2()",3));
 
-	    c.push(new Surfboards(23.10, "Fader 5'9	  18-1/2	2-1/8 thumb tail",69,"playchili2()"));
+	    c.push(new Surfboards("chili",23.10, "Fader 5'9	  18-1/2	2-1/8 thumb tail",69,"playchili2()",3));
 
-	    c.push(new Surfboards(24.50, "Fader 5'10	18-5/8	2-3/16 thumb tail",70,"playchili2()"));
+	    c.push(new Surfboards("chili",24.50, "Fader 5'10	18-5/8	2-3/16 thumb tail",70,"playchili2()",3));
 
-	    c.push(new Surfboards(25.80, "Fader 5'11	18-3/4	2-1/4 thumb tail",71,"playchili2()"));
+	    c.push(new Surfboards("chili",25.80, "Fader 5'11	18-3/4	2-1/4 thumb tail",71,"playchili2()",3));
 
-	    c.push(new Surfboards(27.00, "Fader 6'0    18-7/8	2-3/8 thumb tail",72,"playchili2()"));
+	    c.push(new Surfboards("chili",27.00, "Fader 6'0    18-7/8	2-3/8 thumb tail",72,"playchili2()",3));
 
-	    c.push(new Surfboards(28.30, "Fader 6'1	   19	2-7/16 thumb tail",73,"playchili2()"));
+	    c.push(new Surfboards("chili",28.30, "Fader 6'1	   19	2-7/16 thumb tail",73,"playchili2()",3));
 
-	    c.push(new Surfboards(29.40, "Fader 6'2   19-1/8	2-1/2 thumb tail",74,"playchili2()"));
+	    c.push(new Surfboards("chili",29.40, "Fader 6'2   19-1/8	2-1/2 thumb tail",74,"playchili2()",3));
 
-	    c.push(new Surfboards(30.60, "Fader 6'3	   19-1/4	 2-9/16 thumb tail",75,"playchili2()"));
+	    c.push(new Surfboards("chili",30.60, "Fader 6'3	   19-1/4	 2-9/16 thumb tail",75,"playchili2()",3));
 
-	    c.push(new Surfboards(31.90, "Fader 6'4	  19-3/8	2-5/8 thumb tail",76,"playchili2()"));
+	    c.push(new Surfboards("chili",31.90, "Fader 6'4	  19-3/8	2-5/8 thumb tail",76,"playchili2()",3));
 
-	    c.push(new Surfboards(32.30, "Fader 6'5   19-3/8	2-3/8 thumb tail",77,"playchili2()"));
+	    c.push(new Surfboards("chili",32.30, "Fader 6'5   19-3/8	2-3/8 thumb tail",77,"playchili2()",3));
 
-	    c.push(new Surfboards(33.00, "Fader 6'6	  19-1/2	2-5/8 thumb tail",78,"playchili2()"));
+	    c.push(new Surfboards("chili",33.00, "Fader 6'6	  19-1/2	2-5/8 thumb tail",78,"playchili2()",3));
 
-	    c.push(new Surfboards(23.70, "Rare Bird 5'4	19	2 3/16 thumb tail",64,"playchili4()"));
+	    c.push(new Surfboards("chili",23.70, "Rare Bird 5'4	19	2 3/16 thumb tail",64,"playchili4()",2));
 
-	    c.push(new Surfboards(24.80, "Rare Bird 5'5	19-1/8	2-1/4 thumb tail",65,"playchili4()"));
+	    c.push(new Surfboards("chili",24.80, "Rare Bird 5'5	19-1/8	2-1/4 thumb tail",65,"playchili4()",2));
 
-	    c.push(new Surfboards(25.30, "Rare Bird 5'6	19-1/4 2-1/4 thumb tail",66,"playchili4()"));
+	    c.push(new Surfboards("chili",25.30, "Rare Bird 5'6	19-1/4 2-1/4 thumb tail",66,"playchili4()",2));
 
-        c.push(new Surfboards(26.50, "Rare Bird 5'7	19-3/8	2-5/16 thumb tail",67,"playchili4()"));
+        c.push(new Surfboards("chili",26.50, "Rare Bird 5'7	19-3/8	2-5/16 thumb tail",67,"playchili4()",2));
 
-        c.push(new Surfboards(27.70, "Rare Bird 5'8	19-1/2	2-3/8 thumb tail",68,"playchili4()"));
+        c.push(new Surfboards("chili",27.70, "Rare Bird 5'8	19-1/2	2-3/8 thumb tail",68,"playchili4()",2));
 
-        c.push(new Surfboards(28.30, "Rare Bird 5'9	19-5/8	2-7/16 thumb tail",69,"playchili4()"));
+        c.push(new Surfboards("chili",28.30, "Rare Bird 5'9	19-5/8	2-7/16 thumb tail",69,"playchili4()",2));
 
-        c.push(new Surfboards(30.30, "Rare Bird 5'10	19-3/4	2-1/2 thumb tail",70,"playchili4()"));
+        c.push(new Surfboards("chili",30.30, "Rare Bird 5'10	19-3/4	2-1/2 thumb tail",70,"playchili4()",2));
 
-	    c.push(new Surfboards(31.00, "Rare Bird 5'11	19-7/8	2-1/2 thumb tail",71,"playchili4()"));
+	    c.push(new Surfboards("chili",31.00, "Rare Bird 5'11	19-7/8	2-1/2 thumb tail",71,"playchili4()",2));
 
-	    c.push(new Surfboards(33.00, "Rare Bird 6'0	20	2-5/8 thumb tail",72,"playchili4()"));
+	    c.push(new Surfboards("chili",33.00, "Rare Bird 6'0	20	2-5/8 thumb tail",72,"playchili4()",2));
 
-	    c.push(new Surfboards(33.70, "Rare Bird 6'1	20-1/8	2-5/8 thumb tail",73,"playchili4()"));
+	    c.push(new Surfboards("chili",33.70, "Rare Bird 6'1	20-1/8	2-5/8 thumb tail",73,"playchili4()",2));
 
-	    c.push(new Surfboards(35.70, "Rare Bird 6'2	20-1/4	2-3/4 thumb tail",74,"playchili4()"));
+	    c.push(new Surfboards("chili",35.70, "Rare Bird 6'2	20-1/4	2-3/4 thumb tail",74,"playchili4()",2));
 
-	    c.push(new Surfboards(36.30, "Rare Bird 6'3	20-3/8	2-3/4 thumb tail",75,"playchili4()"));
+	    c.push(new Surfboards("chili",36.30, "Rare Bird 6'3	20-3/8	2-3/4 thumb tail",75,"playchili4()",2));
 
-	    c.push(new Surfboards(37.00, "Rare Bird 6'4	20-1/2	2-3/4 thumb tail",76,"playchili4()"));
+	    c.push(new Surfboards("chili",37.00, "Rare Bird 6'4	20-1/2	2-3/4 thumb tail",76,"playchili4()",2));
 
-        c.push(new Surfboards(37.50, "Rare Bird 6'5	20-1/2	2-3/4 thumb tail",77,"playchili4()"));
+        c.push(new Surfboards("chili",37.50, "Rare Bird 6'5	20-1/2	2-3/4 thumb tail",77,"playchili4()",2));
 
-	    c.push(new Surfboards(38.60, "Rare Bird 6'6	20-1/2	2-7/8 thumb tail",78,"playchili4()"));
+	    c.push(new Surfboards("chili",38.60, "Rare Bird 6'6	20-1/2	2-7/8 thumb tail",78,"playchili4()",2));
 
 
 	    
 
-  c.push(new Surfboards(25.8, `Monsta 8  squash tail  5' 11" 18 1/2" 2 1/4"`,71,"playmovie6()"));
-  c.push(new Surfboards(26.7, `Monsta 8  squash tail  5' 11" 18 5/8" 2 5/16"`,71,"playmovie6()"));
-  c.push(new Surfboards(27.6, `Monsta 8  squash tail  5' 11" 18 3/4" 2 3/8"`,71,"playmovie6()"));
-  c.push(new Surfboards(27.2, `Monsta 8  squash tail  6' 0" 18 3/4" 2 5/16"`,72,"playmovie6()"));
-  c.push(new Surfboards(28.2, `Monsta 8  squash tail  6' 0" 18 7/8" 2 3/8"`,72,"playmovie6()"));
-  c.push(new Surfboards(29.3, `Monsta 8  squash tail  6' 0" 19 " 2 7/16"`,72,"playmovie6()"));
-  c.push(new Surfboards(28.6, `Monsta 8  squash tail  6' 1" 18 7/8" 2 3/8"`,73,"playmovie6()"));
-  c.push(new Surfboards(29.7, `Monsta 8  squash tail  6' 1" 19 " 2 7/16"`,73,"playmovie6()"));
-  c.push(new Surfboards(30.8, `Monsta 8  squash tail  6' 1" 19 1/8" 2 1/2"`,73,"playmovie6()"));
-  c.push(new Surfboards(29.2, `Monsta 8  squash tail  6' 2" 19 " 2 3/8"`,74,"playmovie6()"));
-  c.push(new Surfboards(30.3, `Monsta 8  squash tail  6' 2" 19 1/8" 2 7/16"`,74,"playmovie6()"));
-  c.push(new Surfboards(31.3, `Monsta 8  squash tail  6' 2" 19 1/4" 2 1/2"`,74,"playmovie6()"));
-  c.push(new Surfboards(30.7, `Monsta 8  squash tail  6' 3" 19 1/8" 2 7/16"`,75,"playmovie6()"));
-  c.push(new Surfboards(31.8, `Monsta 8  squash tail  6' 3" 19 1/4" 2 1/2"`,75,"playmovie6()"));
-  c.push(new Surfboards(33.1, `Monsta 8  squash tail  6' 3" 19 1/2" 2 9/16"`,75,"playmovie6()"));
-  c.push(new Surfboards(32.3, `Monsta 8  squash tail  6' 4" 19 1/4" 2 1/2"`,76,"playmovie6()"));
-  c.push(new Surfboards(33.5, `Monsta 8  squash tail  6' 4" 19 1/2" 2 9/16"`,76,"playmovie6()"));
-  c.push(new Surfboards(34.9, `Monsta 8  squash tail  6' 4" 19 3/4" 2 5/8"`,76,"playmovie6()"));
-  c.push(new Surfboards(35.4, `Monsta 8  squash tail  6' 5" 19 3/4" 2 5/8"`,77,"playmovie6()"));
-  c.push(new Surfboards(37.1, `Monsta 8  squash tail  6' 6" 19 7/8" 2 11/16"`,78,"playmovie6()"));
-  c.push(new Surfboards(39.1, `Monsta 8  squash tail  6' 8" 20 " 2 3/4"`,80,"playmovie6()"));
+  c.push(new Surfboards("js",25.8, `Monsta 8  squash tail  5' 11" 18 1/2" 2 1/4"`,71,"playmovie6()",2));
+  c.push(new Surfboards("js",26.7, `Monsta 8  squash tail  5' 11" 18 5/8" 2 5/16"`,71,"playmovie6()",2));
+  c.push(new Surfboards("js",27.6, `Monsta 8  squash tail  5' 11" 18 3/4" 2 3/8"`,71,"playmovie6()",2));
+  c.push(new Surfboards("js",27.2, `Monsta 8  squash tail  6' 0" 18 3/4" 2 5/16"`,72,"playmovie6()",2));
+  c.push(new Surfboards("js",28.2, `Monsta 8  squash tail  6' 0" 18 7/8" 2 3/8"`,72,"playmovie6()",2));
+  c.push(new Surfboards("js",29.3, `Monsta 8  squash tail  6' 0" 19 " 2 7/16"`,72,"playmovie6()",2));
+  c.push(new Surfboards("js",28.6, `Monsta 8  squash tail  6' 1" 18 7/8" 2 3/8"`,73,"playmovie6()",2));
+  c.push(new Surfboards("js",29.7, `Monsta 8  squash tail  6' 1" 19 " 2 7/16"`,73,"playmovie6()",2));
+  c.push(new Surfboards("js",30.8, `Monsta 8  squash tail  6' 1" 19 1/8" 2 1/2"`,73,"playmovie6()",2));
+  c.push(new Surfboards("js",29.2, `Monsta 8  squash tail  6' 2" 19 " 2 3/8"`,74,"playmovie6()",2));
+  c.push(new Surfboards("js",30.3, `Monsta 8  squash tail  6' 2" 19 1/8" 2 7/16"`,74,"playmovie6()",2));
+  c.push(new Surfboards("js",31.3, `Monsta 8  squash tail  6' 2" 19 1/4" 2 1/2"`,74,"playmovie6()",2));
+  c.push(new Surfboards("js",30.7, `Monsta 8  squash tail  6' 3" 19 1/8" 2 7/16"`,75,"playmovie6()",2));
+  c.push(new Surfboards("js",31.8, `Monsta 8  squash tail  6' 3" 19 1/4" 2 1/2"`,75,"playmovie6()",2));
+  c.push(new Surfboards("js",33.1, `Monsta 8  squash tail  6' 3" 19 1/2" 2 9/16"`,75,"playmovie6()",2));
+  c.push(new Surfboards("js",32.3, `Monsta 8  squash tail  6' 4" 19 1/4" 2 1/2"`,76,"playmovie6()",2));
+  c.push(new Surfboards("js",33.5, `Monsta 8  squash tail  6' 4" 19 1/2" 2 9/16"`,76,"playmovie6()",2));
+  c.push(new Surfboards("js",34.9, `Monsta 8  squash tail  6' 4" 19 3/4" 2 5/8"`,76,"playmovie6()",2));
+  c.push(new Surfboards("js",35.4, `Monsta 8  squash tail  6' 5" 19 3/4" 2 5/8"`,77,"playmovie6()",2));
+  c.push(new Surfboards("js",37.1, `Monsta 8  squash tail  6' 6" 19 7/8" 2 11/16"`,78,"playmovie6()",2));
+  c.push(new Surfboards("js",39.1, `Monsta 8  squash tail  6' 8" 20 " 2 3/4"`,80,"playmovie6()",2));
   
-  c.push(new Surfboards(23.2, `Forget me not round tail 5' 8" 18 1/8" 2 3/16"`,68,"playmovie7()"));
-  c.push(new Surfboards(24.4, `Forget me not round tail 5' 9" 18 1/4" 2 1/4"`,69,"playmovie7()"));
-  c.push(new Surfboards(24.7, `Forget me not round tail 5' 10" 18 1/4" 2 1/4"`,70,"playmovie7()"));
-  c.push(new Surfboards(25.7, `Forget me not round tail 5' 10" 18 1/2" 2 5/16"`,70,"playmovie7()"));
-  c.push(new Surfboards(25.3, `Forget me not round tail 5' 11" 18 1/2" 2 1/4"`,71,"playmovie7()"));
-  c.push(new Surfboards(26.4, `Forget me not round tail 5' 11" 18 5/8" 2 5/16"`,71,"playmovie7()"));
-  c.push(new Surfboards(27.6, `Forget me not round tail 6' 0" 18 3/4" 2 3/8"`,72,"playmovie7()"));
-  c.push(new Surfboards(28.6, `Forget me not round tail 6' 0" 18 7/8" 2 7/16"`,72,"playmovie7()"));
-  c.push(new Surfboards(29, `Forget me not round tail 6' 1" 18 7/8" 2 7/16"`,73,"playmovie7()"));
-  c.push(new Surfboards(30, `Forget me not round tail 6' 1" 19 " 2 1/2"`,73,"playmovie7()"));
-  c.push(new Surfboards(30.6, `Forget me not round tail 6' 2" 19 1/8" 2 1/2"`,74,"playmovie7()"));
-  c.push(new Surfboards(31.8, `Forget me not round tail 6' 2" 19 1/4" 2 9/16"`,74,"playmovie7()"));
-  c.push(new Surfboards(31, `Forget me not round tail 6' 3" 19 1/8" 2 1/2"`,75,"playmovie7()"));
-  c.push(new Surfboards(32.2, `Forget me not round tail 6' 3" 19 1/4" 2 9/16"`,75,"playmovie7()"));
-  c.push(new Surfboards(32.6, `Forget me not round tail 6' 4" 19 1/4" 2 9/16"`,76,"playmovie7()"));
-  c.push(new Surfboards(34, `Forget me not round tail 6' 4" 19 1/2" 2 5/8"`,76,"playmovie7()"));
-  c.push(new Surfboards(34.7, `Forget me not round tail 6' 5" 19 5/8" 2 5/8"`,77,"playmovie7()"));
-  c.push(new Surfboards(36.3, `Forget me not round tail 6' 6" 19 3/4" 2 11/16"`,78,"playmovie7()"));
-  c.push(new Surfboards(38.3, `Forget me not round tail 6' 8" 19 7/8" 2 3/4"`,80,"playmovie7()"));
-  c.push(new Surfboards(40.8, `Forget me not round tail 6' 10" 20 " 2 7/8"`,82,"playmovie7()"));
-  c.push(new Surfboards(43.6, `Forget me not round tail 7' 0" 20 1/8" 3"`,84,"playmovie7()"));
-  c.push(new Surfboards(22.7, `Air 17 X squash tail 5' 6" 18 1/4" 2 1/8" `,66,"playmovie8()"));
-  c.push(new Surfboards(24.2, `Air 17 X squash tail 5' 7" 18 1/2" 2 3/16"`,67,"playmovie8()"));
-  c.push(new Surfboards(25.4, `Air 17 X squash tail 5' 8" 18 5/8" 2 1/4"`,68,"playmovie8()"));
-  c.push(new Surfboards(26.4, `Air 17 X squash tail 5' 9" 18 3/4" 2 5/16"`,69,"playmovie8()"));
-  c.push(new Surfboards(27.9, `Air 17 X squash tail 5' 10" 19 " 2 3/8"`,70,"playmovie8()"));
-  c.push(new Surfboards(29.4, `Air 17 X squash tail 5' 11" 19 1/8" 2 7/16"`,71,"playmovie8()"));
-  c.push(new Surfboards(30.7, `Air 17 X squash tail 6' 0" 19 1/4" 2 1/2"`,72,"playmovie8()"));
-  c.push(new Surfboards(32.1, `Air 17 X squash tail 6' 1" 19 1/2" 2 9/16"`,73,"playmovie8()"));
-  c.push(new Surfboards(33.8, `Air 17 X squash tail 6' 2" 19 5/8" 2 5/8"`,74,"playmovie8()"));
-  c.push(new Surfboards(35.5, `Air 17 X squash tail 6' 3" 19 3/4" 2 11/16"`,75,"playmovie8()"));
-  c.push(new Surfboards(36.4, `Air 17 X squash tail 6' 4" 19 7/8" 2 3/4"`,76,"playmovie8()"));
-  c.push(new Surfboards(22.5, `Black box 3 squash tail 5' 4" 18 1/2" 2 1/8"`,64,"playmovie9()"));
-  c.push(new Surfboards(24.6, `Black box 3 squash tail 5' 6" 19 " 2 3/16"`,66,"playmovie9()"));
-  c.push(new Surfboards(26.1, `Black box 3 squash tail 5' 7" 19 1/4" 2 1/4"`,67,"playmovie9()"));
-  c.push(new Surfboards(26.8, `Black box 3 squash tail 5' 7" 19 1/4" 2 5/16"`,67,"playmovie9()"));
-  c.push(new Surfboards(27.6, `Black box 3 squash tail 5' 8" 19 1/2" 2 5/16"`,68,"playmovie9()"));
-  c.push(new Surfboards(28.4, `Black box 3 squash tail 5' 8" 19 1/2" 2 3/8"`,68,"playmovie9()"));
-  c.push(new Surfboards(29, `Black box 3 squash tail 5' 9" 19 5/8" 2 3/8"`,69,"playmovie9()"));
-  c.push(new Surfboards(29.9, `Black box 3 squash tail 5' 9" 19 5/8" 2 7/16"`,69,"playmovie9()"));
-  c.push(new Surfboards(30.5, `Black box 3 squash tail 5' 10" 19 3/4" 2 7/16"`,70,"playmovie9()"));
-  c.push(new Surfboards(31.3, `Black box 3 squash tail 5' 10" 19 3/4" 2 1/2"`,70,"playmovie9()"));
-  c.push(new Surfboards(32.1, `Black box 3 squash tail 5' 11" 20 " 2 1/2"`,71,"playmovie9()"));
-  c.push(new Surfboards(33, `Black box 3 squash tail 5' 11" 20 " 2 9/16"`,71,"playmovie9()"));
-  c.push(new Surfboards(33.8, `Black box 3 squash tail 6' 0" 20 1/4" 2 9/16"`,72,"playmovie9()"));
-  c.push(new Surfboards(34.6, `Black box 3 squash tail 6' 0" 20 1/4" 2 5/8"`,72,"playmovie9()"));
-  c.push(new Surfboards(35.5, `Black box 3 squash tail 6' 1" 20 1/2" 2 5/8"`,73,"playmovie9()"));
-  c.push(new Surfboards(36.5, `Black box 3 squash tail 6' 1" 20 1/2" 2 11/16"`,73,"playmovie9()"));
-  c.push(new Surfboards(37.3, `Black box 3 squash tail 6' 2" 20 3/4" 2 11/16"`,74,"playmovie9()"));
-  c.push(new Surfboards(38.3, `Black box 3 squash tail 6' 2" 20 3/4" 2 3/4"`,74,"playmovie9()"));
-  c.push(new Surfboards(25.2, `Phych nitro swallow tail 5' 2" 19 " 2 3/8"`,62,"playmovie10()"));
-  c.push(new Surfboards(26.7, `Phych nitro swallow tail 5' 3" 19 1/4" 2 7/16"`,63,"playmovie10()"));
-  c.push(new Surfboards(27.9, `Phych nitro swallow tail 5' 4" 19 5/8" 2 7/16"`,64,"playmovie10()"));
-  c.push(new Surfboards(29.3, `Phych nitro swallow tail 5' 5" 19 3/4" 2 1/2"`,65,"playmovie10()"));
-  c.push(new Surfboards(30.7, `Phych nitro swallow tail 5' 6" 19 7/8" 2 9/16"`,66,"playmovie10()"));
-  c.push(new Surfboards(31.3, `Phych nitro swallow tail 5' 7" 20 " 2 9/16"`,67,"playmovie10()"));
-  c.push(new Surfboards(33, `Phych nitro swallow tail 5' 8" 20 1/4" 2 5/8"`,68,"playmovie10()"));
-  c.push(new Surfboards(33.9, `Phych nitro swallow tail 5' 9" 20 1/2" 2 5/8"`,69,"playmovie10()"));
-  c.push(new Surfboards(35.6, `Phych nitro swallow tail 5' 10" 20 3/4" 2 11/16"`,70,"playmovie10()"));
-  c.push(new Surfboards(36.5, `Phych nitro swallow tail 5' 11" 21" 2 11/16"`,71,"playmovie10()"));
-  c.push(new Surfboards(38.4, `Phych nitro swallow tail 6' 0" 21 1/4" 2 3/4"`,72,"playmovie10()"));
-  c.push(new Surfboards(21.7, `Rook 15 squash tail 5'6	18 3/8	2 1/16`,66,"playmovie1()"));
-  c.push(new Surfboards(23.2, `Rook 15 squash tail 5'8	18 3/8	2 1/8`,68,"playmovie1()"));
-  c.push(new Surfboards(24.4, `Rook 15 squash tail 5'9	18 1/2	2 3/16`,69,"playmovie1()"));
-  c.push(new Surfboards(25.6, `Rook 15 squash tail 5'10	18 5/8	2 1/4`,70,"playmovie1()"));
-  c.push(new Surfboards(27.0, `Rook 15 squash tail 5'11	18 7/8	2 5/16`,71,"playmovie1()"));
-  c.push(new Surfboards(28.3, `Rook 15 squash tail 6'0	19	2 3/8`,72,"playmovie1()"));
-  c.push(new Surfboards(29.7, `Rook 15 squash tail 6'1	19 1/8	2 7/16`,73,"playmovie1()"));
-  c.push(new Surfboards(30.9, `Rook 15 squash tail 6'2	19 1/4	2 1/2`,74,"playmovie1()"));
-  c.push(new Surfboards(32.7, `Rook 15 squash tail 6'3	19 1/2	2 9/16`,75,"playmovie1()"));
-  c.push(new Surfboards(34.3, `Rook 15 squash tail 6'4	19 3/4	2 5/8`,76,"playmovie1()"));
-  c.push(new Surfboards(35.8, `Rook 15 squash tail 6'5	19 7/8	2 11/16`,77,"playmovie1()"));
-  c.push(new Surfboards(37.4, `Rook 15 squash tail 6'6	20	2 3/4`,78,"playmovie1()"));
-  c.push(new Surfboards(38.8, `Rook 15 squash tail 6'8	20 1/4	2 3/4`,80,"playmovie1()"));
-  c.push(new Surfboards(42.1, `Rook 15 squash tail 6'10	20 1/2	2 7/8`,82,"playmovie1()"));
-  c.push(new Surfboards(23.8, `Fever squash tail 5'8	18 1/4	2 3/16`,68,"playmovie2()"));
-  c.push(new Surfboards(25.0, `Fever squash tail 5'9	18 3/8	2 1/4`,69,"playmovie2()"));
-  c.push(new Surfboards(26.4, `Fever squash tail 5'10	18 5/8	2 5/16`,70,"playmovie2()"));
-  c.push(new Surfboards(27.9, `Fever squash tail 5'11	18 7/8	2 3/8`,71,"playmovie2()"));
-  c.push(new Surfboards(29.4, `Fever squash tail 6'0	19 1/8	2 7/16`,72,"playmovie2()"));
-  c.push(new Surfboards(30.8, `Fever squash tail 6'1	19 1/4	2 1/2`,73,"playmovie2()"));
-  c.push(new Surfboards(32.4, `Fever squash tail 6'2	19 1/2	2 9/16`,74,"playmovie2()"));
-  c.push(new Surfboards(34.1, `Fever squash tail 6'3	19 3/4	2 5/8`,75,"playmovie2()"));
-  c.push(new Surfboards(36.7, `Fever squash tail 6'4	20	2 3/4`,76,"playmovie2()"));
-  c.push(new Surfboards(24.2, `Neckbeard 2 square tail 5'4	18 5/8	2 3/16`,64,"playmovie3()"));
-  c.push(new Surfboards(25.6, `Neckbeard 2 square tail 5'5	18 7/8	2 1/4`,65,"playmovie3()"));
-  c.push(new Surfboards(26.8, `Neckbeard 2 square tail 5'6	19	2 5/16`,66,"playmovie3()"));
-  c.push(new Surfboards(28.1, `Neckbeard 2 square tail 5'7	19 1/8	2 3/8`,67,"playmovie3()"));
-  c.push(new Surfboards(29.7, `Neckbeard 2 square tail 5'8	19 3/8	2 7/16`,68,"playmovie3()"));
-  c.push(new Surfboards(31.3, `Neckbeard 2 square tail 5'9	19 5/8	2 1/2`,69,"playmovie3()"));
-  c.push(new Surfboards(32.9, `Neckbeard 2 square tail 5'10	19 7/8	2 9/16`,70,"playmovie3()"));
-  c.push(new Surfboards(34.4, `Neckbeard 2 square tail 5'11	20	2 5/8`,71,"playmovie3()"));
-  c.push(new Surfboards(35.9, `Neckbeard 2 square tail 6'0	20 1/8	2 11/16`,72,"playmovie3()"));
-  c.push(new Surfboards(38.2, `Neckbeard 2 square tail 6'2	20 3/8	2 3/4`,73,"playmovie3()"));
-  c.push(new Surfboards(24.4, `Rocket wide swallow tail 5’4	18 1/2	2 1/4`,64,"playmovie4()"));
-  c.push(new Surfboards(25.8, `Rocket wide swallow tail 5’5	18 3/4	2 5/16`,65,"playmovie4()"));
-  c.push(new Surfboards(27.2, `Rocket wide swallow tail 5’6	19	2 3/8`,66,"playmovie4()"));
-  c.push(new Surfboards(28.7, `Rocket wide swallow tail 5’7	19 1/4	2 7/16`,67,"playmovie4()"));
-  c.push(new Surfboards(30.3, `Rocket wide swallow tail 5’8	19 1/2	2 1/2`,68,"playmovie4()"));
-  c.push(new Surfboards(31.9, `Rocket wide swallow tail 5’9	19 3/4	2 9/16`,69,"playmovie4()"));
-  c.push(new Surfboards(33.5, `Rocket wide swallow tail 5’10	20	2 5/8`,70,"playmovie4()"));
-  c.push(new Surfboards(34.4, `Rocket wide swallow tail 5’11	20 1/4	2 5/8`,71,"playmovie4()"));
-  c.push(new Surfboards(37.0, `Rocket wide swallow tail 6’0	20 1/2	2 3/4`,72,"playmovie4()"));
-  c.push(new Surfboards(38.0, `Rocket wide swallow tail 6’1	20 3/4	2 3/4`,73,"playmovie4()"));
-  c.push(new Surfboards(40.7, `Rocket wide swallow tail 6’2	21	2 7/8`,74,"playmovie4()"));
-  c.push(new Surfboards(26.0, `Taco grinder pin tail 6'1	18 1/2	2 1/4`,73,"playmovie5()"));
-  c.push(new Surfboards(26.9, `Taco grinder pin tail 6'2	18 5/8	2 5/16`,74,"playmovie5()"));
-  c.push(new Surfboards(29.1, `Taco grinder pin tail 6'3	18 7/8	2 3/8`,75,"playmovie5()"));
-  c.push(new Surfboards(30.1, `Taco grinder pin tail 6'4	19	2 7/16`,76,"playmovie5()"));
-  c.push(new Surfboards(31.5, `Taco grinder pin tail 6'5	19 1/8	2 1/2`,77,"playmovie5()"));
-  c.push(new Surfboards(31.9, `Taco grinder pin tail 6'6	19 1/8	2 1/2`,78,"playmovie5()"));
-  c.push(new Surfboards(33.3, `Taco grinder pin tail 6'7	19 1/4	2 9/16`,79,"playmovie5()"));
-  c.push(new Surfboards(34.8, `Taco grinder pin tail 6'8	19 3/8	2 5/8`,80,"playmovie5()"));
-  c.push(new Surfboards(35.5, `Taco grinder pin tail 6'9	19 1/2	2 5/8`,81,"playmovie5()"));
-  c.push(new Surfboards(38.1, `Taco grinder pin tail 6'10	19 3/4	2 3/4`,82,"playmovie5()"));
-  c.push(new Surfboards(41.3, `Taco grinder pin tail 7'0	20	2 7/8`,83,"playmovie5()"));
+  c.push(new Surfboards("js",23.2, `Forget me not round tail 5' 8" 18 1/8" 2 3/16"`,68,"playmovie7()",2));
+  c.push(new Surfboards("js",24.4, `Forget me not round tail 5' 9" 18 1/4" 2 1/4"`,69,"playmovie7()",2));
+  c.push(new Surfboards("js",24.7, `Forget me not round tail 5' 10" 18 1/4" 2 1/4"`,70,"playmovie7()",3));
+  c.push(new Surfboards("js",25.7, `Forget me not round tail 5' 10" 18 1/2" 2 5/16"`,70,"playmovie7()",2));
+  c.push(new Surfboards("js",25.3, `Forget me not round tail 5' 11" 18 1/2" 2 1/4"`,71,"playmovie7()",3));
+  c.push(new Surfboards("js",26.4, `Forget me not round tail 5' 11" 18 5/8" 2 5/16"`,71,"playmovie7()",2));
+  c.push(new Surfboards("js",27.6, `Forget me not round tail 6' 0" 18 3/4" 2 3/8"`,72,"playmovie7()",3));
+  c.push(new Surfboards("js",28.6, `Forget me not round tail 6' 0" 18 7/8" 2 7/16"`,72,"playmovie7()",2));
+  c.push(new Surfboards("js",29, `Forget me not round tail 6' 1" 18 7/8" 2 7/16"`,73,"playmovie7()",3));
+  c.push(new Surfboards("js",30, `Forget me not round tail 6' 1" 19 " 2 1/2"`,73,"playmovie7()",2));
+  c.push(new Surfboards("js",30.6, `Forget me not round tail 6' 2" 19 1/8" 2 1/2"`,74,"playmovie7()",3));
+  c.push(new Surfboards("js",31.8, `Forget me not round tail 6' 2" 19 1/4" 2 9/16"`,74,"playmovie7()",2));
+  c.push(new Surfboards("js",31, `Forget me not round tail 6' 3" 19 1/8" 2 1/2"`,75,"playmovie7()",3));
+  c.push(new Surfboards("js",32.2, `Forget me not round tail 6' 3" 19 1/4" 2 9/16"`,75,"playmovie7()",2));
+  c.push(new Surfboards("js",32.6, `Forget me not round tail 6' 4" 19 1/4" 2 9/16"`,76,"playmovie7()",3));
+  c.push(new Surfboards("js",34, `Forget me not round tail 6' 4" 19 1/2" 2 5/8"`,76,"playmovie7()",2));
+  c.push(new Surfboards("js",34.7, `Forget me not round tail 6' 5" 19 5/8" 2 5/8"`,77,"playmovie7()",2));
+  c.push(new Surfboards("js",36.3, `Forget me not round tail 6' 6" 19 3/4" 2 11/16"`,78,"playmovie7()",2));
+  c.push(new Surfboards("js",38.3, `Forget me not round tail 6' 8" 19 7/8" 2 3/4"`,80,"playmovie7()",2));
+  c.push(new Surfboards("js",40.8, `Forget me not round tail 6' 10" 20 " 2 7/8"`,82,"playmovie7()",2));
+  c.push(new Surfboards("js",43.6, `Forget me not round tail 7' 0" 20 1/8" 3"`,84,"playmovie7()",2));
+
+  c.push(new Surfboards("js",22.7, `Air 17 X squash tail 5' 6" 18 1/4" 2 1/8" `,66,"playmovie8()",2));
+  c.push(new Surfboards("js",24.2, `Air 17 X squash tail 5' 7" 18 1/2" 2 3/16"`,67,"playmovie8()",2));
+  c.push(new Surfboards("js",25.4, `Air 17 X squash tail 5' 8" 18 5/8" 2 1/4"`,68,"playmovie8()",2));
+  c.push(new Surfboards("js",26.4, `Air 17 X squash tail 5' 9" 18 3/4" 2 5/16"`,69,"playmovie8()",2));
+  c.push(new Surfboards("js",27.9, `Air 17 X squash tail 5' 10" 19 " 2 3/8"`,70,"playmovie8()",2));
+  c.push(new Surfboards("js",29.4, `Air 17 X squash tail 5' 11" 19 1/8" 2 7/16"`,71,"playmovie8()",2));
+  c.push(new Surfboards("js",30.7, `Air 17 X squash tail 6' 0" 19 1/4" 2 1/2"`,72,"playmovie8()",2));
+  c.push(new Surfboards("js",32.1, `Air 17 X squash tail 6' 1" 19 1/2" 2 9/16"`,73,"playmovie8()",2));
+  c.push(new Surfboards("js",33.8, `Air 17 X squash tail 6' 2" 19 5/8" 2 5/8"`,74,"playmovie8()",2));
+  c.push(new Surfboards("js",35.5, `Air 17 X squash tail 6' 3" 19 3/4" 2 11/16"`,75,"playmovie8()",2));
+  c.push(new Surfboards("js",36.4, `Air 17 X squash tail 6' 4" 19 7/8" 2 3/4"`,76,"playmovie8()",2));
+
+  c.push(new Surfboards("js",22.5, `Black box 3 squash tail 5' 4" 18 1/2" 2 1/8"`,64,"playmovie9()",1));
+  c.push(new Surfboards("js",24.6, `Black box 3 squash tail 5' 6" 19 " 2 3/16"`,66,"playmovie9()",1));
+  c.push(new Surfboards("js",26.1, `Black box 3 squash tail 5' 7" 19 1/4" 2 1/4"`,67,"playmovie9()",1));
+  c.push(new Surfboards("js",26.8, `Black box 3 squash tail 5' 7" 19 1/4" 2 5/16"`,67,"playmovie9()",1));
+  c.push(new Surfboards("js",27.6, `Black box 3 squash tail 5' 8" 19 1/2" 2 5/16"`,68,"playmovie9()",1));
+  c.push(new Surfboards("js",28.4, `Black box 3 squash tail 5' 8" 19 1/2" 2 3/8"`,68,"playmovie9()",1));
+  c.push(new Surfboards("js",29, `Black box 3 squash tail 5' 9" 19 5/8" 2 3/8"`,69,"playmovie9()",1));
+  c.push(new Surfboards("js",29.9, `Black box 3 squash tail 5' 9" 19 5/8" 2 7/16"`,69,"playmovie9()",1));
+  c.push(new Surfboards("js",30.5, `Black box 3 squash tail 5' 10" 19 3/4" 2 7/16"`,70,"playmovie9()",1));
+  c.push(new Surfboards("js",31.3, `Black box 3 squash tail 5' 10" 19 3/4" 2 1/2"`,70,"playmovie9()",1));
+  c.push(new Surfboards("js",32.1, `Black box 3 squash tail 5' 11" 20 " 2 1/2"`,71,"playmovie9()",1));
+  c.push(new Surfboards("js",33, `Black box 3 squash tail 5' 11" 20 " 2 9/16"`,71,"playmovie9()",1));
+  c.push(new Surfboards("js",33.8, `Black box 3 squash tail 6' 0" 20 1/4" 2 9/16"`,72,"playmovie9()",1));
+  c.push(new Surfboards("js",34.6, `Black box 3 squash tail 6' 0" 20 1/4" 2 5/8"`,72,"playmovie9()",1));
+  c.push(new Surfboards("js",35.5, `Black box 3 squash tail 6' 1" 20 1/2" 2 5/8"`,73,"playmovie9()",1));
+  c.push(new Surfboards("js",36.5, `Black box 3 squash tail 6' 1" 20 1/2" 2 11/16"`,73,"playmovie9()",1));
+  c.push(new Surfboards("js",37.3, `Black box 3 squash tail 6' 2" 20 3/4" 2 11/16"`,74,"playmovie9()",1));
+  c.push(new Surfboards("js",38.3, `Black box 3 squash tail 6' 2" 20 3/4" 2 3/4"`,74,"playmovie9()",1));
+
+  c.push(new Surfboards("js",25.2, `Phych nitro swallow tail 5' 2" 19 " 2 3/8"`,62,"playmovie10()",1));
+  c.push(new Surfboards("js",26.7, `Phych nitro swallow tail 5' 3" 19 1/4" 2 7/16"`,63,"playmovie10()",1));
+  c.push(new Surfboards("js",27.9, `Phych nitro swallow tail 5' 4" 19 5/8" 2 7/16"`,64,"playmovie10()",1));
+  c.push(new Surfboards("js",29.3, `Phych nitro swallow tail 5' 5" 19 3/4" 2 1/2"`,65,"playmovie10()",1));
+  c.push(new Surfboards("js",30.7, `Phych nitro swallow tail 5' 6" 19 7/8" 2 9/16"`,66,"playmovie10()",1));
+  c.push(new Surfboards("js",31.3, `Phych nitro swallow tail 5' 7" 20 " 2 9/16"`,67,"playmovie10()",1));
+  c.push(new Surfboards("js",33, `Phych nitro swallow tail 5' 8" 20 1/4" 2 5/8"`,68,"playmovie10()",1));
+  c.push(new Surfboards("js",33.9, `Phych nitro swallow tail 5' 9" 20 1/2" 2 5/8"`,69,"playmovie10()",1));
+  c.push(new Surfboards("js",35.6, `Phych nitro swallow tail 5' 10" 20 3/4" 2 11/16"`,70,"playmovie10()",1));
+  c.push(new Surfboards("js",36.5, `Phych nitro swallow tail 5' 11" 21" 2 11/16"`,71,"playmovie10()",1));
+  c.push(new Surfboards("js",38.4, `Phych nitro swallow tail 6' 0" 21 1/4" 2 3/4"`,72,"playmovie10()",1));
+
+  c.push(new Surfboards("merrick",21.7, `Rook 15 squash tail 5'6	18 3/8	2 1/16`,66,"playmovie1()",2));
+  c.push(new Surfboards("merrick",23.2, `Rook 15 squash tail 5'8	18 3/8	2 1/8`,68,"playmovie1()",2));
+  c.push(new Surfboards("merrick",24.4, `Rook 15 squash tail 5'9	18 1/2	2 3/16`,69,"playmovie1()",2));
+  c.push(new Surfboards("merrick",25.6, `Rook 15 squash tail 5'10	18 5/8	2 1/4`,70,"playmovie1()",2));
+  c.push(new Surfboards("merrick",27.0, `Rook 15 squash tail 5'11	18 7/8	2 5/16`,71,"playmovie1()",2));
+  c.push(new Surfboards("merrick",28.3, `Rook 15 squash tail 6'0	19	2 3/8`,72,"playmovie1()",2));
+  c.push(new Surfboards("merrick",29.7, `Rook 15 squash tail 6'1	19 1/8	2 7/16`,73,"playmovie1()",2));
+  c.push(new Surfboards("merrick",30.9, `Rook 15 squash tail 6'2	19 1/4	2 1/2`,74,"playmovie1()",2));
+  c.push(new Surfboards("merrick",32.7, `Rook 15 squash tail 6'3	19 1/2	2 9/16`,75,"playmovie1()",2));
+  c.push(new Surfboards("merrick",34.3, `Rook 15 squash tail 6'4	19 3/4	2 5/8`,76,"playmovie1()",2));
+  c.push(new Surfboards("merrick",35.8, `Rook 15 squash tail 6'5	19 7/8	2 11/16`,77,"playmovie1()",2));
+  c.push(new Surfboards("merrick",37.4, `Rook 15 squash tail 6'6	20	2 3/4`,78,"playmovie1()",2));
+  c.push(new Surfboards("merrick",38.8, `Rook 15 squash tail 6'8	20 1/4	2 3/4`,80,"playmovie1()",2));
+  c.push(new Surfboards("merrick",42.1, `Rook 15 squash tail 6'10	20 1/2	2 7/8`,82,"playmovie1()",2));
+
+  c.push(new Surfboards("merrick",23.8, `Fever squash tail 5'8	18 1/4	2 3/16`,68,"playmovie2()",2));
+  c.push(new Surfboards("merrick",25.0, `Fever squash tail 5'9	18 3/8	2 1/4`,69,"playmovie2()",2));
+  c.push(new Surfboards("merrick",26.4, `Fever squash tail 5'10	18 5/8	2 5/16`,70,"playmovie2()",2));
+  c.push(new Surfboards("merrick",27.9, `Fever squash tail 5'11	18 7/8	2 3/8`,71,"playmovie2()",2));
+  c.push(new Surfboards("merrick",29.4, `Fever squash tail 6'0	19 1/8	2 7/16`,72,"playmovie2()",2));
+  c.push(new Surfboards("merrick",30.8, `Fever squash tail 6'1	19 1/4	2 1/2`,73,"playmovie2()",2));
+  c.push(new Surfboards("merrick",32.4, `Fever squash tail 6'2	19 1/2	2 9/16`,74,"playmovie2()",2));
+  c.push(new Surfboards("merrick",34.1, `Fever squash tail 6'3	19 3/4	2 5/8`,75,"playmovie2()",2));
+  c.push(new Surfboards("merrick",36.7, `Fever squash tail 6'4	20	2 3/4`,76,"playmovie2()",2));
+
+  c.push(new Surfboards("merrick",24.2, `Neckbeard 2 square tail 5'4	18 5/8	2 3/16`,64,"playmovie3()",1));
+  c.push(new Surfboards("merrick",25.6, `Neckbeard 2 square tail 5'5	18 7/8	2 1/4`,65,"playmovie3()",1));
+  c.push(new Surfboards("merrick",26.8, `Neckbeard 2 square tail 5'6	19	2 5/16`,66,"playmovie3()",1));
+  c.push(new Surfboards("merrick",28.1, `Neckbeard 2 square tail 5'7	19 1/8	2 3/8`,67,"playmovie3()",1));
+  c.push(new Surfboards("merrick",29.7, `Neckbeard 2 square tail 5'8	19 3/8	2 7/16`,68,"playmovie3()",1));
+  c.push(new Surfboards("merrick",31.3, `Neckbeard 2 square tail 5'9	19 5/8	2 1/2`,69,"playmovie3()",1));
+  c.push(new Surfboards("merrick",32.9, `Neckbeard 2 square tail 5'10	19 7/8	2 9/16`,70,"playmovie3()",1));
+  c.push(new Surfboards("merrick",34.4, `Neckbeard 2 square tail 5'11	20	2 5/8`,71,"playmovie3()",1));
+  c.push(new Surfboards("merrick",35.9, `Neckbeard 2 square tail 6'0	20 1/8	2 11/16`,72,"playmovie3()",1));
+  c.push(new Surfboards("merrick",38.2, `Neckbeard 2 square tail 6'2	20 3/8	2 3/4`,73,"playmovie3()",1));
+
+  c.push(new Surfboards("merrick",24.4, `Rocket wide swallow tail 5'4	18 1/2	2 1/4`,64,"playmovie4()",1));
+  c.push(new Surfboards("merrick",25.8, `Rocket wide swallow tail 5'5	18 3/4	2 5/16`,65,"playmovie4()",1));
+  c.push(new Surfboards("merrick",27.2, `Rocket wide swallow tail 5'6	19	2 3/8`,66,"playmovie4()",1));
+  c.push(new Surfboards("merrick",28.7, `Rocket wide swallow tail 5'7	19 1/4	2 7/16`,67,"playmovie4()",1));
+  c.push(new Surfboards("merrick",30.3, `Rocket wide swallow tail 5'8	19 1/2	2 1/2`,68,"playmovie4()",1));
+  c.push(new Surfboards("merrick",31.9, `Rocket wide swallow tail 5'9	19 3/4	2 9/16`,69,"playmovie4()",1));
+  c.push(new Surfboards("merrick",33.5, `Rocket wide swallow tail 5'10	20	2 5/8`,70,"playmovie4()",1));
+  c.push(new Surfboards("merrick",34.4, `Rocket wide swallow tail 5'11	20 1/4	2 5/8`,71,"playmovie4()",1));
+  c.push(new Surfboards("merrick",37.0, `Rocket wide swallow tail 6'0	20 1/2	2 3/4`,72,"playmovie4()",1));
+  c.push(new Surfboards("merrick",38.0, `Rocket wide swallow tail 6'1	20 3/4	2 3/4`,73,"playmovie4()",1));
+  c.push(new Surfboards("merrick",40.7, `Rocket wide swallow tail 6'2	21	2 7/8`,74,"playmovie4()",1));
+
+  c.push(new Surfboards("merrick",26.0, `Taco grinder pin tail 6'1	18 1/2	2 1/4`,73,"playmovie5()",3));
+  c.push(new Surfboards("merrick",26.9, `Taco grinder pin tail 6'2	18 5/8	2 5/16`,74,"playmovie5()",3));
+  c.push(new Surfboards("merrick",29.1, `Taco grinder pin tail 6'3	18 7/8	2 3/8`,75,"playmovie5()",3));
+  c.push(new Surfboards("merrick",30.1, `Taco grinder pin tail 6'4	19	2 7/16`,76,"playmovie5()",3));
+  c.push(new Surfboards("merrick",31.5, `Taco grinder pin tail 6'5	19 1/8	2 1/2`,77,"playmovie5()",3));
+  c.push(new Surfboards("merrick",31.9, `Taco grinder pin tail 6'6	19 1/8	2 1/2`,78,"playmovie5()",3));
+  c.push(new Surfboards("merrick",33.3, `Taco grinder pin tail 6'7	19 1/4	2 9/16`,79,"playmovie5()",3));
+  c.push(new Surfboards("merrick",34.8, `Taco grinder pin tail 6'8	19 3/8	2 5/8`,80,"playmovie5()",3));
+  c.push(new Surfboards("merrick",35.5, `Taco grinder pin tail 6'9	19 1/2	2 5/8`,81,"playmovie5()",3));
+  c.push(new Surfboards("merrick",38.1, `Taco grinder pin tail 6'10	19 3/4	2 3/4`,82,"playmovie5()",3));
+  c.push(new Surfboards("merrick",41.3, `Taco grinder pin tail 7'0	20	2 7/8`,83,"playmovie5()",3));
  // c.push(new Surfboards(, `Taco grinder pin tail `,,"playmovie4()"));
  
 
@@ -356,57 +380,138 @@ function dropmenu1() {
 
 
 // c.push(new Surfboards(, ``,,"()"));
+let cionoff = "off";
+let jsonoff = "off";
+let chilionoff = "off";
+let lostonoff = "off";
+function findboards(){
+ d = c.sort(function(a,b){return a.height - b.height });
+if(cionoff == "on"){
+	 d = d.filter(board => { return board.company !== "merrick"}) ;
+}
+if(jsonoff == "on"){
+	 d = d.filter(board => { return board.company !== "js"}) ;
+}
+if(chilionoff == "on"){
+	 d = d.filter(board => { return board.company !== "chili"}) ;
+}
+if(lostonoff == "on"){
+	 d = d.filter(board => { return board.company !== "lost"}) ;
+}
+findshortboard();
+	findgroveler();
+	findstepup();
+}
 
+function filterci() {
+	if(cionoff == "off"){
+		document.getElementById('buttonci').style.filter = "invert(0%)";
+		cionoff = "on";
+		findboards();
+	}
+	else if(cionoff == "on"){
+		document.getElementById('buttonci').style.filter = "invert(100%)";
+		cionoff = "off";
+		findboards();
+	}
+}
 
+function filterjs() {
+	if(jsonoff == "off"){
+		document.getElementById('buttonjs').style.filter = "invert(0%)";
+		jsonoff = "on";
+		findboards();
+	}
+	else if(jsonoff == "on"){
+		document.getElementById('buttonjs').style.filter = "invert(100%)";
+		jsonoff = "off";
+		findboards();
+	}
+}
 
+function filterchili() {
+	if(chilionoff == "off"){
+		document.getElementById('buttonchili').style.filter = "invert(0%)";
+		chilionoff = "on";
+		findboards();
+	}
+	else if(chilionoff == "on"){
+		document.getElementById('buttonchili').style.filter = "invert(100%)";
+		chilionoff = "off";
+		findboards();
+	}
+}
 
-	 
+function filterlost() {
+	if(lostonoff == "off"){
+		document.getElementById('buttonlost').style.filter = "invert(0%)";
+		lostonoff = "on";
+		findboards();
+	}
+	else if(lostonoff == "on"){
+		document.getElementById('buttonlost').style.filter = "invert(100%)";
+		lostonoff = "off";
+		findboards();
+	}
+}
 
-
-
-
-
-
-	 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		function findBoard() {
+		function findshortboard() {
 			let myBoards =[];
 			let myVolume = Number(document.getElementById('vol').value);
-			for(let i = 0; i < c.length; i++){
-				if(c[i].volume + .6 >= myVolume && c[i].volume - .6  <= myVolume){
-               myBoards.push(c[i].text);
-               myBoards.push(c[i].volume);
+			for(let i = 0; i < d.length; i++){
+				if(d[i].volume + .6 >= myVolume && d[i].volume - .6  <= myVolume){
+					if(d[i].wavesize == 2){
+               myBoards.push(d[i].text);
+               myBoards.push(d[i].volume);
 				myBoards.push('L');	
-               myBoards.push(`<div style="display:inline;color:blue" onclick="${c[i].playfunction}()">REVIEW</div>`);
+               myBoards.push(`<div style="display:inline;color:blue" onclick="${d[i].playfunction}()">REVIEW</div>`);
               myBoards.push('<br>');
-
+              	}
 				}
 			}
-			document.getElementById('div1').innerHTML = myBoards.join(' ');
+			document.getElementById('shortboarddis').innerHTML = "<h2>Shortboards</h2>" + myBoards.join(' ');
 		}
+		function findgroveler() {
+			let myBoards =[];
+			let myVolume = Number(document.getElementById('vol').value);
+			for(let i = 0; i < d.length; i++){
+				if(d[i].volume - .6 >= myVolume && d[i].volume - 1.8  <= myVolume){
+					if(d[i].wavesize == 1){
+               myBoards.push(d[i].text);
+               myBoards.push(d[i].volume);
+				myBoards.push('L');	
+               myBoards.push(`<div style="display:inline;color:blue" onclick="${d[i].playfunction}()">REVIEW</div>`);
+              myBoards.push('<br>');
+              	}
+				}
+			}
+			document.getElementById('grovelerdis').innerHTML = "<h2>Grovelers</h2>" + myBoards.join(' ');
+		}
+		function findstepup() {
+			let myBoards =[];
+			let myVolume = Number(document.getElementById('vol').value);
+			for(let i = 0; i < d.length; i++){
+				if(d[i].volume - .6 >= myVolume && d[i].volume - 2.2  <= myVolume){
+					if(d[i].wavesize == 3){
+               myBoards.push(d[i].text);
+               myBoards.push(d[i].volume);
+				myBoards.push('L');	
+               myBoards.push(`<div style="display:inline;color:blue" onclick="${d[i].playfunction}()">REVIEW</div>`);
+              myBoards.push('<br>');
+              	}
+				}
+			}
+			document.getElementById('stepupdis').innerHTML = "<h2>Step ups</h2>" + myBoards.join(' ');
+		}
+		
 		function opencbvolume(){
 		document.getElementById('displaycbvolume').style.height =
 		"auto";
-	}
+}
+
+
+
+	
 			let findCustomVolume = function () {
 let stockLength = (sLength1.value * 12) + Number(sLength2.value);
 let stockVolume = sVolume.value;
@@ -419,7 +524,8 @@ let customVolume = (customLength / stockLength) * (customWidth / stockWidth) * (
 document.getElementById('cVolumeDisplay').innerHTML = customVolume ;
 
 }
-	
+
+
 	function playmovie1() {
 		document.getElementById('frame1').style.height = "57vw";
 		document.getElementById('if1').src = "https://www.youtube.com/embed/qTpMJNMvHvI";

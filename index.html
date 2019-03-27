@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
  <head>
+ 	<title>SURFBOARD REVIEWS - boardfinder</title>
+ 	<meta name="description" content="Surf Gear Review is about finding the perfect surfboard quiver for you. First find your volume then use the boardfinder to search through hundreds of board and find the best ones for you"> 
  	<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="sgrphone.css" >
 <style>
@@ -14,7 +16,7 @@
 </div>
 <div class="nav">
 	<div class="reviewdrop drop1" onclick="dropmenu1()">
-		<img src="cilogo.jpeg" width="100%" height="100%" alt=" ">
+		<img src="cilogo.jpeg" width="80%" height="80%" alt=" ">
 	</div>
 	<div class="reviewdrop drop2" onclick="dropmenu2()">
 		<img src="jslogo.jpg" width="80%" height="80%" alt=" ">
@@ -116,11 +118,32 @@
 			</div>
 	<h2 style="text-align:center">Find your perfect board</h2>
 	Your Volume:
-	<input type="text" id="vol" step=".1" size="4" value="24"><br><br>
-	<span class="button" onclick="findBoard()">
-	FIND BOARDS</span><br><br>
-	<div id="div1"></div>
+	<input type="text" id="vol" step=".1" size="4" value="29.6"><br><br>
+	
+	<span class="button" onclick="findboards()">
+	FIND BOARDS</span>
+	<br><br>
+	
+	<div id="filterbuttons">
+	<div class="logobutton" id="buttonci" onclick="filterci()">
+		<img src="cilogo2.jpg.jpeg" width="100%" height="auto" alt=" ">
+	</div>
+	<div class="logobutton"  id="buttonjs" onclick="filterjs()">
+		<img src="jslogo.jpg" width="100%" height="100%" alt=" ">
+	</div>
+	<div class="logobutton"  id="buttonchili" onclick="filterchili()">
+		<img src="chililogo.jpg" width="100%" height="100%" alt=" ">
+	</div>
+	<div class="logobutton"  id="buttonlost" onclick="filterlost()">
+		<img src="lostlogo.jpg" width="100%" height="100%" alt=" ">
+	</div>
 </div>
+	<div id="grovelerdis"></div>
+	<div id="shortboarddis"></div>
+	<div id="stepupdis"></div>
+
+</div>
+
 
 
 <div id="displaycbvolume">
