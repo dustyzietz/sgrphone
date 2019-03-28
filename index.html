@@ -14,20 +14,20 @@
  <div class="header">
 	<h1>Surf Gear Review</h1>
 </div>
+ <div id="streamer">SURFBOARD REVIEWS</div>
 <div class="nav">
-	<div class="reviewdrop drop1" onclick="dropmenu1()">
-		<img src="cilogo.jpeg" width="80%" height="80%" alt=" ">
+	<div class="logobutton drop1" onclick="dropmenu1()">
+		<img src="cilogo2.jpg.jpeg" width="100%" height="100%" alt=" ">
 	</div>
-	<div class="reviewdrop drop2" onclick="dropmenu2()">
-		<img src="jslogo.jpg" width="80%" height="80%" alt=" ">
+	<div class="logobutton drop2" onclick="dropmenu2()">
+		<img src="jslogo.jpg" width="100%" height="100%" alt=" ">
 	</div>
-	<div class="reviewdrop drop3" onclick="dropmenu3()">
-		<img src="chililogo.jpg" width="80%" height="80%" alt=" ">
+	<div class="logobutton drop3" onclick="dropmenu3()">
+		<img src="chililogo.jpg" width="100%" height="100%" alt=" ">
 	</div>
-	<div class="reviewdrop drop4" onclick="dropmenu4()">
-		<img src="lostlogo.jpg" width="75%" height="75%" alt=" ">
+	<div class="logobutton drop4" onclick="dropmenu4()">
+		<img src="lostlogo.jpg" width="100%" height="100%" alt=" ">
 	</div>
-	<div id="streamer">SURFBOARD REVIEWS</div>
 	<div class="droplist" id="dlist1">
 		<div class="dropitem" onclick="playmovie1()">ROOK 15</div>
 		<div class="dropitem" onclick="playmovie2()">FEVER</div>
@@ -120,13 +120,20 @@
 	Your Volume:
 	<input type="text" id="vol" step=".1" size="4" value="29.6"><br><br>
 	
-	<span class="button" onclick="findboards()">
-	FIND BOARDS</span>
-	<br><br>
+	<br>
+<span class="button" onclick="groveler()">Grovelers</span><br><br>
+<div id="grovelerdis"></div><br>
+<span class="button" onclick="shortboard()">Shortboards</span><br><br>
+
+<div id="shortboarddis"></div><br>
+<span class="button" onclick="stepup()">Stepups
+</span><br><br>
+<div id="stepupdis"></div><br>
+FILTER
 	
 	<div id="filterbuttons">
 	<div class="logobutton" id="buttonci" onclick="filterci()">
-		<img src="cilogo2.jpg.jpeg" width="100%" height="auto" alt=" ">
+		<img src="cilogo2.jpg.jpeg" width="100%" height="100%" alt=" ">
 	</div>
 	<div class="logobutton"  id="buttonjs" onclick="filterjs()">
 		<img src="jslogo.jpg" width="100%" height="100%" alt=" ">
@@ -138,9 +145,9 @@
 		<img src="lostlogo.jpg" width="100%" height="100%" alt=" ">
 	</div>
 </div>
-	<div id="grovelerdis"></div>
-	<div id="shortboarddis"></div>
-	<div id="stepupdis"></div>
+	
+	
+	
 
 </div>
 

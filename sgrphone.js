@@ -75,14 +75,17 @@ function dropmenu1() {
 	function beginnerv() {
 		var bv = input1.value / 5.25 ;
 		document.getElementById("dis1").innerHTML = bv.toFixed(1) + " Liters" ;
+		document.getElementById("vol").value = bv.toFixed(1) ;
 	}
 	function intermediatev() {
 		var bv = input1.value / 6.00 ;
 		document.getElementById("dis1").innerHTML = bv.toFixed(1) + " Liters" ;
+		document.getElementById("vol").value = bv.toFixed(1) ;
 	}
 	function expertv() {
 		var bv = input1.value / 6.25 ;
 		document.getElementById("dis1").innerHTML = bv.toFixed(1) + " Liters" ;
+		document.getElementById("vol").value = bv.toFixed(1) ;
 	}
 	function openbfinder(){
 		document.getElementById('displaybfinder').style.height =
@@ -469,7 +472,7 @@ function filterlost() {
               	}
 				}
 			}
-			document.getElementById('shortboarddis').innerHTML = "<h2>Shortboards</h2>" + myBoards.join(' ');
+			document.getElementById('shortboarddis').innerHTML =  myBoards.join(' ');
 		}
 		function findgroveler() {
 			let myBoards =[];
@@ -485,7 +488,7 @@ function filterlost() {
               	}
 				}
 			}
-			document.getElementById('grovelerdis').innerHTML = "<h2>Grovelers</h2>" + myBoards.join(' ');
+			document.getElementById('grovelerdis').innerHTML =  myBoards.join(' ');
 		}
 		function findstepup() {
 			let myBoards =[];
@@ -501,7 +504,48 @@ function filterlost() {
               	}
 				}
 			}
-			document.getElementById('stepupdis').innerHTML = "<h2>Step ups</h2>" + myBoards.join(' ');
+			document.getElementById('stepupdis').innerHTML =  myBoards.join(' ');
+		}
+let groveleronoff = "off"
+		function groveler(){
+			if(groveleronoff == "off") {
+			document.getElementById('grovelerdis').style.display = "block" ;
+			groveleronoff = "on";
+			findboards();
+
+			}
+			else if(groveleronoff == "on") {
+document.getElementById('grovelerdis').style.display = "none" ;
+			groveleronoff = "off";
+			}
+		}
+
+		let shortboardonoff = "off"
+		function shortboard(){
+			if(shortboardonoff == "off") {
+			document.getElementById('shortboarddis').style.display = "block" ;
+			shortboardonoff = "on";
+			findboards();
+
+			}
+			else if(shortboardonoff == "on") {
+document.getElementById('shortboarddis').style.display = "none" ;
+			shortboardonoff = "off";
+			}
+		}
+
+		let stepuponoff = "off"
+		function stepup(){
+			if(stepuponoff == "off") {
+			document.getElementById('stepupdis').style.display = "block" ;
+			stepuponoff = "on";
+			findboards();
+
+			}
+			else if(stepuponoff == "on") {
+document.getElementById('stepupdis').style.display = "none" ;
+			stepuponoff = "off";
+			}
 		}
 		
 		function opencbvolume(){

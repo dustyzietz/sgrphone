@@ -35,9 +35,7 @@ h2 {
 	height:auto;
 	float: left;
 }
-.drop1 {
-	padding: 2vw 0;
-}
+
 div.droplist {
 	position: absolute;
     opacity: 0;
@@ -116,10 +114,7 @@ div.innerwindow {
 	color : white;
 }
 div#streamer {
-	position: absolute;
 	text-align: center;
-	top: 0;
-	width: 100%;
 }
 #displayvolcal {
 	height: 0;
@@ -144,14 +139,25 @@ div#streamer {
 	border-radius: 5vw;
 }
 .logobutton {
-	width:19.9%;
+	width:19.5%;
 	height:16vw;
 	float: left;
 	border-radius: 2vw ;
 	-webkit-filter: invert(100%);
 	filter: invert(100%);
 	overflow: hidden;
-	margin:2.5% ;
+	margin: 2.5% ;
+	border: thin solid black;
 
 
+}
+
+#grovelerdis {
+	display:none;
+}
+#shortboarddis {
+	display:none;
+}
+#stepupdis {
+	display:none;
 }
